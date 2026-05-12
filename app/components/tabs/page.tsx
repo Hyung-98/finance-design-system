@@ -4,7 +4,7 @@ import { TableOfContents } from '@/components/layout/TableOfContents'
 import { PropsTable } from '@/components/docs/PropsTable'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 import { DosDonts } from '@/components/docs/DosDonts'
-import { Tabs } from '@/components/tds/Tabs'
+import { Tabs } from '@/components/fds/Tabs'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 
 const assetTabs = [
@@ -26,15 +26,15 @@ export default function TabsPage() {
   return (
     <div className="flex gap-8">
       <article className="flex-1 max-w-3xl px-8 py-10">
-        <div className="mb-2 text-sm text-[var(--tds-color-text-tertiary)] font-medium">컴포넌트</div>
-        <h1 className="text-4xl font-bold text-[var(--tds-color-text-primary)] mb-3">Tabs</h1>
-        <p className="text-lg text-[var(--tds-color-text-secondary)] mb-10 leading-relaxed">
+        <div className="mb-2 text-sm text-[var(--fds-color-text-tertiary)] font-medium">컴포넌트</div>
+        <h1 className="text-4xl font-bold text-[var(--fds-color-text-primary)] mb-3">Tabs</h1>
+        <p className="text-lg text-[var(--fds-color-text-secondary)] mb-10 leading-relaxed">
           관련 콘텐츠를 카테고리별로 전환하는 네비게이션 컴포넌트입니다.
           자산 현황, 거래 내역 필터 등 토스 앱의 핵심 네비게이션 패턴입니다.
         </p>
 
         <section id="variants">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Variants</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Variants</h2>
           <ComponentPreview label="line (기본) — 하단 밑줄 인디케이터">
             <div className="w-full">
               <Tabs
@@ -54,8 +54,8 @@ export default function TabsPage() {
         </section>
 
         <section id="with-content" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">콘텐츠 패널</h2>
-          <p className="text-sm text-[var(--tds-color-text-secondary)] mb-4">
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">콘텐츠 패널</h2>
+          <p className="text-sm text-[var(--fds-color-text-secondary)] mb-4">
             children render prop으로 활성 탭에 따른 콘텐츠를 렌더링합니다.
           </p>
           <ComponentPreview label="탭 + 콘텐츠">
@@ -70,7 +70,7 @@ export default function TabsPage() {
                 variant="line"
               >
                 {(active) => (
-                  <div className="p-4 text-sm text-[var(--tds-color-text-secondary)]">
+                  <div className="p-4 text-sm text-[var(--fds-color-text-secondary)]">
                     {active === 'income' && '이번 달 수입 내역이 없습니다.'}
                     {active === 'expense' && '이번 달 지출 내역이 없습니다.'}
                     {active === 'transfer' && '이번 달 이체 내역이 없습니다.'}
@@ -82,7 +82,7 @@ export default function TabsPage() {
         </section>
 
         <section id="disabled" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">비활성 탭</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">비활성 탭</h2>
           <ComponentPreview label="disabled 탭 항목">
             <div className="w-full">
               <Tabs
@@ -100,7 +100,7 @@ export default function TabsPage() {
         </section>
 
         <section id="props" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Props</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Props</h2>
           <PropsTable
             props={[
               { name: 'items', type: 'TabItem[]', required: true, description: '탭 목록 ({ value, label, disabled? })' },
@@ -114,9 +114,9 @@ export default function TabsPage() {
         </section>
 
         <section id="code" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">코드 예시</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">코드 예시</h2>
           <CodeBlock
-            code={`import { Tabs } from '@/components/tds'
+            code={`import { Tabs } from '@/components/fds'
 import { useState } from 'react'
 
 // 비제어 — 콘텐츠 패널 포함
@@ -152,7 +152,7 @@ function FilterTabs() {
         </section>
 
         <section id="dos-donts" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Do / Don't</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Do / Don't</h2>
           <DosDonts
             dos={[
               { label: 'line은 페이지 네비게이션', description: '수입/지출, 자산/부채 등 주요 뷰 전환에는 line variant를 사용합니다.' },

@@ -4,10 +4,10 @@ import { useState } from 'react'
 import { TableOfContents } from '@/components/layout/TableOfContents'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 import { DosDonts } from '@/components/docs/DosDonts'
-import { Input } from '@/components/tds/Input'
-import { Select } from '@/components/tds/Select'
-import { Button } from '@/components/tds/Button'
-import { Checkbox } from '@/components/tds/Checkbox'
+import { Input } from '@/components/fds/Input'
+import { Select } from '@/components/fds/Select'
+import { Button } from '@/components/fds/Button'
+import { Checkbox } from '@/components/fds/Checkbox'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 
 function TransferForm() {
@@ -70,22 +70,22 @@ export default function FormPatternPage() {
   return (
     <div className="flex gap-8">
       <article className="flex-1 max-w-3xl px-8 py-10">
-        <div className="mb-2 text-sm text-[var(--tds-color-text-tertiary)] font-medium">패턴</div>
-        <h1 className="text-4xl font-bold text-[var(--tds-color-text-primary)] mb-3">Form 패턴</h1>
-        <p className="text-lg text-[var(--tds-color-text-secondary)] mb-10 leading-relaxed">
+        <div className="mb-2 text-sm text-[var(--fds-color-text-tertiary)] font-medium">패턴</div>
+        <h1 className="text-4xl font-bold text-[var(--fds-color-text-primary)] mb-3">Form 패턴</h1>
+        <p className="text-lg text-[var(--fds-color-text-secondary)] mb-10 leading-relaxed">
           입력 컴포넌트를 조합한 폼 구성 원칙입니다.
           이체, 가입, 결제 등 사용자 입력이 필요한 모든 화면에 적용됩니다.
         </p>
 
         <section id="example">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">실전 예시: 이체 폼</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">실전 예시: 이체 폼</h2>
           <ComponentPreview label="이체 폼 전체 구성">
             <TransferForm />
           </ComponentPreview>
         </section>
 
         <section id="layout" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">레이아웃 원칙</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">레이아웃 원칙</h2>
           <div className="space-y-4">
             {[
               {
@@ -105,35 +105,35 @@ export default function FormPatternPage() {
                 desc: '제출 버튼은 폼 하단에 배치하며, 긴 폼에서는 하단 sticky로 항상 접근 가능하게 합니다.',
               },
             ].map((item) => (
-              <div key={item.title} className="p-4 rounded-[var(--tds-radius-lg)] border border-[var(--tds-color-border)]">
-                <p className="text-sm font-semibold text-[var(--tds-color-text-primary)] mb-1">{item.title}</p>
-                <p className="text-sm text-[var(--tds-color-text-secondary)]">{item.desc}</p>
+              <div key={item.title} className="p-4 rounded-[var(--fds-radius-lg)] border border-[var(--fds-color-border)]">
+                <p className="text-sm font-semibold text-[var(--fds-color-text-primary)] mb-1">{item.title}</p>
+                <p className="text-sm text-[var(--fds-color-text-secondary)]">{item.desc}</p>
               </div>
             ))}
           </div>
         </section>
 
         <section id="validation" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">유효성 검사 시점</h2>
-          <div className="overflow-x-auto rounded-xl border border-[var(--tds-color-border)]">
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">유효성 검사 시점</h2>
+          <div className="overflow-x-auto rounded-xl border border-[var(--fds-color-border)]">
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-[var(--tds-color-bg-elevated)] border-b border-[var(--tds-color-border)]">
-                  <th className="text-left px-4 py-3 font-semibold text-[var(--tds-color-text-primary)]">시점</th>
-                  <th className="text-left px-4 py-3 font-semibold text-[var(--tds-color-text-primary)]">방법</th>
-                  <th className="text-left px-4 py-3 font-semibold text-[var(--tds-color-text-primary)]">사용 경우</th>
+                <tr className="bg-[var(--fds-color-bg-elevated)] border-b border-[var(--fds-color-border)]">
+                  <th className="text-left px-4 py-3 font-semibold text-[var(--fds-color-text-primary)]">시점</th>
+                  <th className="text-left px-4 py-3 font-semibold text-[var(--fds-color-text-primary)]">방법</th>
+                  <th className="text-left px-4 py-3 font-semibold text-[var(--fds-color-text-primary)]">사용 경우</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[var(--tds-color-border)]">
+              <tbody className="divide-y divide-[var(--fds-color-border)]">
                 {[
                   ['onBlur', '포커스를 잃을 때', '이메일 형식, 숫자 범위 확인'],
                   ['onChange', '입력 중 실시간', '글자 수 제한, 허용 문자 필터링'],
                   ['onSubmit', '제출 버튼 클릭 시', '필수 필드 빈값 확인, 최종 서버 검증'],
                 ].map(([timing, method, when]) => (
                   <tr key={timing}>
-                    <td className="px-4 py-3"><code className="text-xs bg-[var(--tds-color-bg-elevated)] px-1.5 py-0.5 rounded font-mono">{timing}</code></td>
-                    <td className="px-4 py-3 text-[var(--tds-color-text-secondary)]">{method}</td>
-                    <td className="px-4 py-3 text-[var(--tds-color-text-secondary)]">{when}</td>
+                    <td className="px-4 py-3"><code className="text-xs bg-[var(--fds-color-bg-elevated)] px-1.5 py-0.5 rounded font-mono">{timing}</code></td>
+                    <td className="px-4 py-3 text-[var(--fds-color-text-secondary)]">{method}</td>
+                    <td className="px-4 py-3 text-[var(--fds-color-text-secondary)]">{when}</td>
                   </tr>
                 ))}
               </tbody>
@@ -142,9 +142,9 @@ export default function FormPatternPage() {
         </section>
 
         <section id="code" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">코드 예시</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">코드 예시</h2>
           <CodeBlock
-            code={`import { Input, Select, Button, Checkbox } from '@/components/tds'
+            code={`import { Input, Select, Button, Checkbox } from '@/components/fds'
 import { useState } from 'react'
 
 function TransferForm() {
@@ -200,7 +200,7 @@ function TransferForm() {
         </section>
 
         <section id="dos-donts" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Do / Don't</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Do / Don't</h2>
           <DosDonts
             dos={[
               { label: '인라인 에러 메시지', description: '에러는 해당 필드 바로 아래에 표시합니다. 폼 상단의 요약 에러는 긴 폼에서만 추가로 사용합니다.' },

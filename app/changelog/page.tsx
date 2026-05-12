@@ -78,32 +78,32 @@ const changelog: ChangeEntry[] = [
 ]
 
 const typeStyles = {
-  new: { label: '신규', className: 'bg-[var(--tds-color-primary-subtle)] text-[var(--tds-color-primary)]' },
-  update: { label: '업데이트', className: 'bg-[var(--tds-color-success-subtle)] text-[var(--tds-color-success)]' },
-  fix: { label: '수정', className: 'bg-[var(--tds-color-warning-subtle)] text-[var(--tds-color-warning)]' },
-  deprecate: { label: '지원 종료', className: 'bg-[var(--tds-color-danger-subtle)] text-[var(--tds-color-danger)]' },
+  new: { label: '신규', className: 'bg-[var(--fds-color-primary-subtle)] text-[var(--fds-color-primary)]' },
+  update: { label: '업데이트', className: 'bg-[var(--fds-color-success-subtle)] text-[var(--fds-color-success)]' },
+  fix: { label: '수정', className: 'bg-[var(--fds-color-warning-subtle)] text-[var(--fds-color-warning)]' },
+  deprecate: { label: '지원 종료', className: 'bg-[var(--fds-color-danger-subtle)] text-[var(--fds-color-danger)]' },
 }
 
 export default function ChangelogPage() {
   return (
     <div className="flex gap-8">
       <article className="flex-1 max-w-3xl px-8 py-10">
-        <div className="mb-2 text-sm text-[var(--tds-color-text-tertiary)] font-medium">문서</div>
-        <h1 className="text-4xl font-bold text-[var(--tds-color-text-primary)] mb-3">Changelog</h1>
-        <p className="text-lg text-[var(--tds-color-text-secondary)] mb-10 leading-relaxed">
-          TDS 디자인 시스템 가이드의 버전별 변경 내역입니다.
+        <div className="mb-2 text-sm text-[var(--fds-color-text-tertiary)] font-medium">문서</div>
+        <h1 className="text-4xl font-bold text-[var(--fds-color-text-primary)] mb-3">Changelog</h1>
+        <p className="text-lg text-[var(--fds-color-text-secondary)] mb-10 leading-relaxed">
+          FDS 디자인 시스템 가이드의 버전별 변경 내역입니다.
         </p>
 
         <div className="space-y-10">
           {changelog.map((entry) => (
             <section key={entry.version} id={`v${entry.version.replace(/\./g, '-')}`}>
               <div className="flex items-baseline gap-3 mb-5">
-                <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)]">
+                <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)]">
                   v{entry.version}
                 </h2>
-                <span className="text-sm text-[var(--tds-color-text-tertiary)]">{entry.date}</span>
+                <span className="text-sm text-[var(--fds-color-text-tertiary)]">{entry.date}</span>
               </div>
-              <div className="space-y-2.5 border-l-2 border-[var(--tds-color-border)] pl-5">
+              <div className="space-y-2.5 border-l-2 border-[var(--fds-color-border)] pl-5">
                 {entry.changes.map((change, i) => {
                   const style = typeStyles[change.type]
                   return (
@@ -111,7 +111,7 @@ export default function ChangelogPage() {
                       <span className={`shrink-0 text-xs font-medium px-2 py-0.5 rounded mt-0.5 ${style.className}`}>
                         {style.label}
                       </span>
-                      <p className="text-sm text-[var(--tds-color-text-secondary)] leading-relaxed">
+                      <p className="text-sm text-[var(--fds-color-text-secondary)] leading-relaxed">
                         {change.content}
                       </p>
                     </div>

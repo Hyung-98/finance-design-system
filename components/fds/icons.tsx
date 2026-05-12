@@ -1,10 +1,12 @@
 import { SVGProps } from 'react'
 
-type IconProps = SVGProps<SVGSVGElement> & {
+export type IconProps = SVGProps<SVGSVGElement> & {
   size?: number
+  /** 스크린리더용 레이블. 미설정 시 장식 아이콘으로 처리됩니다. */
+  'aria-label'?: string
 }
 
-function Icon({ size = 24, children, ...props }: IconProps & { children: React.ReactNode }) {
+function Icon({ size = 24, children, 'aria-label': ariaLabel, ...props }: IconProps & { children: React.ReactNode }) {
   return (
     <svg
       width={size}
@@ -15,6 +17,9 @@ function Icon({ size = 24, children, ...props }: IconProps & { children: React.R
       strokeWidth={1.75}
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-label={ariaLabel}
+      aria-hidden={ariaLabel ? undefined : true}
+      role={ariaLabel ? 'img' : undefined}
       {...props}
     >
       {children}

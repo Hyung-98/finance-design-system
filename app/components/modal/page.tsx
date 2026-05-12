@@ -5,8 +5,8 @@ import { TableOfContents } from '@/components/layout/TableOfContents'
 import { PropsTable } from '@/components/docs/PropsTable'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 import { CodeBlock } from '@/components/docs/CodeBlock'
-import { Modal } from '@/components/tds/Modal'
-import { Button } from '@/components/tds/Button'
+import { Modal } from '@/components/fds/Modal'
+import { Button } from '@/components/fds/Button'
 
 export default function ModalPage() {
   const [open, setOpen] = useState(false)
@@ -15,14 +15,14 @@ export default function ModalPage() {
   return (
     <div className="flex gap-8">
       <article className="flex-1 max-w-3xl px-8 py-10">
-        <div className="mb-2 text-sm text-[var(--tds-color-text-tertiary)] font-medium">컴포넌트</div>
-        <h1 className="text-4xl font-bold text-[var(--tds-color-text-primary)] mb-3">Modal</h1>
-        <p className="text-lg text-[var(--tds-color-text-secondary)] mb-10 leading-relaxed">
+        <div className="mb-2 text-sm text-[var(--fds-color-text-tertiary)] font-medium">컴포넌트</div>
+        <h1 className="text-4xl font-bold text-[var(--fds-color-text-primary)] mb-3">Modal</h1>
+        <p className="text-lg text-[var(--fds-color-text-secondary)] mb-10 leading-relaxed">
           사용자의 즉각적인 주의가 필요한 정보나 액션을 요구할 때 사용하는 오버레이 컴포넌트입니다.
         </p>
 
         <section id="basic">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">기본 모달</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">기본 모달</h2>
           <ComponentPreview>
             <Button onClick={() => setOpen(true)}>기본 모달 열기</Button>
           </ComponentPreview>
@@ -45,7 +45,7 @@ export default function ModalPage() {
         </section>
 
         <section id="confirm" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">확인 다이얼로그</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">확인 다이얼로그</h2>
           <ComponentPreview>
             <Button variant="danger" onClick={() => setConfirmOpen(true)}>계정 삭제</Button>
           </ComponentPreview>
@@ -65,7 +65,7 @@ export default function ModalPage() {
         </section>
 
         <section id="props" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Props</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Props</h2>
           <PropsTable
             props={[
               { name: 'open', type: 'boolean', required: true, description: '모달 표시 여부' },
@@ -80,9 +80,9 @@ export default function ModalPage() {
         </section>
 
         <section id="code" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">코드 예시</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">코드 예시</h2>
           <CodeBlock
-            code={`import { Modal, Button } from '@/components/tds'
+            code={`import { Modal, Button } from '@/components/fds'
 import { useState } from 'react'
 
 function DeleteAccountModal() {
@@ -118,8 +118,8 @@ function DeleteAccountModal() {
         </section>
 
         <section id="accessibility" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">접근성</h2>
-          <ul className="space-y-3 text-sm text-[var(--tds-color-text-secondary)]">
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">접근성</h2>
+          <ul className="space-y-3 text-sm text-[var(--fds-color-text-secondary)]">
             {[
               'role="dialog"와 aria-modal="true"가 자동 설정되어 스크린 리더에 모달임을 알립니다.',
               'title prop이 있을 경우 aria-labelledby로 자동 연결됩니다.',
@@ -127,7 +127,7 @@ function DeleteAccountModal() {
               '모달 열림 시 배경 스크롤이 잠깁니다.',
             ].map((item, i) => (
               <li key={i} className="flex gap-3">
-                <span className="text-[var(--tds-color-success)] shrink-0 mt-0.5">✓</span>
+                <span className="text-[var(--fds-color-success)] shrink-0 mt-0.5">✓</span>
                 <span>{item}</span>
               </li>
             ))}

@@ -26,7 +26,7 @@ export function Divider({
         role="separator"
         aria-orientation="vertical"
         className={cn(
-          'self-stretch w-px border-l border-[var(--tds-color-border)]',
+          'self-stretch w-px border-l border-[var(--fds-color-border)]',
           borderStyle,
           spacingV[spacing],
           className
@@ -38,9 +38,9 @@ export function Divider({
   if (label) {
     return (
       <div className={cn('flex items-center gap-3', spacingH[spacing], className)} role="separator">
-        <div className={cn('flex-1 border-t border-[var(--tds-color-border)]', borderStyle)} />
-        <span className="text-xs text-[var(--tds-color-text-tertiary)] whitespace-nowrap">{label}</span>
-        <div className={cn('flex-1 border-t border-[var(--tds-color-border)]', borderStyle)} />
+        <div className={cn('flex-1 border-t border-[var(--fds-color-border)]', borderStyle)} />
+        <span className="text-xs text-[var(--fds-color-text-tertiary)] whitespace-nowrap">{label}</span>
+        <div className={cn('flex-1 border-t border-[var(--fds-color-border)]', borderStyle)} />
       </div>
     )
   }
@@ -48,7 +48,7 @@ export function Divider({
   return (
     <hr
       className={cn(
-        'border-0 border-t border-[var(--tds-color-border)]',
+        'border-0 border-t border-[var(--fds-color-border)]',
         borderStyle,
         spacingH[spacing],
         className

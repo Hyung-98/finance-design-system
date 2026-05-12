@@ -43,16 +43,16 @@ export function Header() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 h-[var(--header-height)] border-b border-[var(--tds-color-border)] bg-[var(--tds-color-bg-base)]"
+      className="fixed top-0 left-0 right-0 h-[var(--header-height)] border-b border-[var(--fds-color-border)] bg-[var(--fds-color-bg-base)]"
       style={{ zIndex: 20 }}
     >
       <div className="flex items-center h-full px-6 gap-4">
         <Link href="/" className="flex items-center gap-2.5">
           <DSLogo />
-          <span className="font-semibold text-sm text-[var(--tds-color-text-primary)]">
+          <span className="font-semibold text-sm text-[var(--fds-color-text-primary)]">
             Finance Design System
           </span>
-          <span className="text-xs px-1.5 py-0.5 rounded bg-[var(--tds-color-primary-subtle)] text-[var(--tds-color-primary)] font-medium">
+          <span className="text-xs px-1.5 py-0.5 rounded bg-[var(--fds-color-primary-subtle)] text-[var(--fds-color-primary)] font-medium">
             Guide
           </span>
         </Link>
@@ -65,14 +65,14 @@ export function Header() {
             const e = new KeyboardEvent('keydown', { key: 'k', metaKey: true, bubbles: true })
             window.dispatchEvent(e)
           }}
-          className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-[var(--tds-radius-lg)] border border-[var(--tds-color-border)] text-sm text-[var(--tds-color-text-tertiary)] hover:border-[var(--tds-color-border-strong)] hover:text-[var(--tds-color-text-secondary)] transition-colors bg-[var(--tds-color-bg-elevated)]"
+          className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-[var(--fds-radius-lg)] border border-[var(--fds-color-border)] text-sm text-[var(--fds-color-text-tertiary)] hover:border-[var(--fds-color-border-strong)] hover:text-[var(--fds-color-text-secondary)] transition-colors bg-[var(--fds-color-bg-elevated)]"
           aria-label="검색"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
           <span className="text-xs">검색</span>
-          <kbd className="flex items-center gap-0.5 text-[10px] font-medium bg-[var(--tds-color-bg-base)] border border-[var(--tds-color-border)] px-1.5 py-0.5 rounded ml-1">
+          <kbd className="flex items-center gap-0.5 text-[10px] font-medium bg-[var(--fds-color-bg-base)] border border-[var(--fds-color-border)] px-1.5 py-0.5 rounded ml-1">
             ⌘K
           </kbd>
         </button>
@@ -83,7 +83,7 @@ export function Header() {
           href="https://github.com/toss"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[var(--tds-color-text-secondary)] hover:text-[var(--tds-color-text-primary)] transition-colors"
+          className="text-[var(--fds-color-text-secondary)] hover:text-[var(--fds-color-text-primary)] transition-colors"
           aria-label="GitHub"
         >
           <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -94,7 +94,7 @@ export function Header() {
         {mounted && (
           <button
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className="p-1.5 rounded-lg text-[var(--tds-color-text-secondary)] hover:text-[var(--tds-color-text-primary)] hover:bg-[var(--tds-color-bg-elevated)] transition-colors"
+            className="p-1.5 rounded-lg text-[var(--fds-color-text-secondary)] hover:text-[var(--fds-color-text-primary)] hover:bg-[var(--fds-color-bg-elevated)] transition-colors"
             aria-label="다크모드 토글"
           >
             {theme === 'dark' ? <SunIcon /> : <MoonIcon />}

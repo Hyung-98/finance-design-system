@@ -3,7 +3,7 @@
 import { TableOfContents } from '@/components/layout/TableOfContents'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 import { DosDonts } from '@/components/docs/DosDonts'
-import { Button } from '@/components/tds/Button'
+import { Button } from '@/components/fds/Button'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 
 function EmptyStateCard({
@@ -19,11 +19,11 @@ function EmptyStateCard({
 }) {
   return (
     <div className="flex flex-col items-center text-center px-6 py-12 max-w-xs">
-      <div className="w-16 h-16 rounded-2xl bg-[var(--tds-color-bg-elevated)] flex items-center justify-center mb-5 text-[var(--tds-color-text-tertiary)]">
+      <div className="w-16 h-16 rounded-2xl bg-[var(--fds-color-bg-elevated)] flex items-center justify-center mb-5 text-[var(--fds-color-text-tertiary)]">
         {icon}
       </div>
-      <h3 className="text-base font-bold text-[var(--tds-color-text-primary)] mb-2">{title}</h3>
-      <p className="text-sm text-[var(--tds-color-text-secondary)] leading-relaxed mb-5">{description}</p>
+      <h3 className="text-base font-bold text-[var(--fds-color-text-primary)] mb-2">{title}</h3>
+      <p className="text-sm text-[var(--fds-color-text-secondary)] leading-relaxed mb-5">{description}</p>
       {action && <Button size="sm">{action.label}</Button>}
     </div>
   )
@@ -51,15 +51,15 @@ export default function EmptyStatePage() {
   return (
     <div className="flex gap-8">
       <article className="flex-1 max-w-3xl px-8 py-10">
-        <div className="mb-2 text-sm text-[var(--tds-color-text-tertiary)] font-medium">패턴</div>
-        <h1 className="text-4xl font-bold text-[var(--tds-color-text-primary)] mb-3">Empty State</h1>
-        <p className="text-lg text-[var(--tds-color-text-secondary)] mb-10 leading-relaxed">
+        <div className="mb-2 text-sm text-[var(--fds-color-text-tertiary)] font-medium">패턴</div>
+        <h1 className="text-4xl font-bold text-[var(--fds-color-text-primary)] mb-3">Empty State</h1>
+        <p className="text-lg text-[var(--fds-color-text-secondary)] mb-10 leading-relaxed">
           데이터가 없을 때 표시하는 화면입니다. 사용자에게 현재 상황을 안내하고
           다음 행동을 유도하는 역할을 합니다.
         </p>
 
         <section id="types">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">유형별 예시</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">유형별 예시</h2>
           <ComponentPreview label="거래 내역 없음">
             <EmptyStateCard
               icon={<TransactionIcon />}
@@ -85,7 +85,7 @@ export default function EmptyStatePage() {
         </section>
 
         <section id="anatomy" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">구성 요소</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">구성 요소</h2>
           <div className="space-y-3">
             {[
               { element: '아이콘/일러스트', required: true, desc: '현재 상태를 시각적으로 표현. 24~64px 아이콘 또는 일러스트.' },
@@ -93,16 +93,16 @@ export default function EmptyStatePage() {
               { element: '설명', required: false, desc: '이유 또는 해결 방법 안내. 1~2문장.' },
               { element: 'CTA 버튼', required: false, desc: '사용자가 취할 수 있는 다음 행동. 항상 있을 필요는 없음.' },
             ].map((item) => (
-              <div key={item.element} className="flex gap-4 p-4 rounded-[var(--tds-radius-lg)] border border-[var(--tds-color-border)]">
+              <div key={item.element} className="flex gap-4 p-4 rounded-[var(--fds-radius-lg)] border border-[var(--fds-color-border)]">
                 <div className="shrink-0 mt-0.5">
                   {item.required
-                    ? <span className="text-xs px-1.5 py-0.5 rounded bg-[var(--tds-color-danger-subtle)] text-[var(--tds-color-danger)] font-medium">필수</span>
-                    : <span className="text-xs px-1.5 py-0.5 rounded bg-[var(--tds-color-bg-elevated)] text-[var(--tds-color-text-tertiary)] font-medium">선택</span>
+                    ? <span className="text-xs px-1.5 py-0.5 rounded bg-[var(--fds-color-danger-subtle)] text-[var(--fds-color-danger)] font-medium">필수</span>
+                    : <span className="text-xs px-1.5 py-0.5 rounded bg-[var(--fds-color-bg-elevated)] text-[var(--fds-color-text-tertiary)] font-medium">선택</span>
                   }
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-[var(--tds-color-text-primary)]">{item.element}</p>
-                  <p className="text-sm text-[var(--tds-color-text-secondary)] mt-0.5">{item.desc}</p>
+                  <p className="text-sm font-medium text-[var(--fds-color-text-primary)]">{item.element}</p>
+                  <p className="text-sm text-[var(--fds-color-text-secondary)] mt-0.5">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -110,7 +110,7 @@ export default function EmptyStatePage() {
         </section>
 
         <section id="code" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">코드 예시</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">코드 예시</h2>
           <CodeBlock
             code={`// Empty State 컴포넌트 패턴
 function EmptyState({ icon, title, description, action }) {
@@ -145,7 +145,7 @@ function EmptyState({ icon, title, description, action }) {
         </section>
 
         <section id="dos-donts" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Do / Don't</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Do / Don't</h2>
           <DosDonts
             dos={[
               { label: '"없어요" 패턴 사용', description: '제목은 "거래 내역이 없어요"처럼 친근하게 상황을 설명합니다. 기술적 표현을 피합니다.' },

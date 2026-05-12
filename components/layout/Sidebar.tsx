@@ -19,8 +19,8 @@ function NavGroup({ item }: { item: NavItem }) {
         className={cn(
           'block px-3 py-1.5 text-sm rounded-lg transition-colors',
           isActive
-            ? 'bg-[var(--tds-color-primary-subtle)] text-[var(--tds-color-primary)] font-medium'
-            : 'text-[var(--tds-color-text-secondary)] hover:text-[var(--tds-color-text-primary)] hover:bg-[var(--tds-color-bg-elevated)]'
+            ? 'bg-[var(--fds-color-primary-subtle)] text-[var(--fds-color-primary)] font-medium'
+            : 'text-[var(--fds-color-text-secondary)] hover:text-[var(--fds-color-text-primary)] hover:bg-[var(--fds-color-bg-elevated)]'
         )}
       >
         {item.title}
@@ -35,8 +35,8 @@ function NavGroup({ item }: { item: NavItem }) {
         className={cn(
           'w-full flex items-center justify-between px-3 py-1.5 text-sm rounded-lg transition-colors',
           isChildActive || isActive
-            ? 'text-[var(--tds-color-text-primary)] font-semibold'
-            : 'text-[var(--tds-color-text-secondary)] hover:text-[var(--tds-color-text-primary)] hover:bg-[var(--tds-color-bg-elevated)]'
+            ? 'text-[var(--fds-color-text-primary)] font-semibold'
+            : 'text-[var(--fds-color-text-secondary)] hover:text-[var(--fds-color-text-primary)] hover:bg-[var(--fds-color-bg-elevated)]'
         )}
       >
         <span>{item.title}</span>
@@ -50,7 +50,7 @@ function NavGroup({ item }: { item: NavItem }) {
         </svg>
       </button>
       {open && (
-        <div className="ml-3 mt-1 border-l border-[var(--tds-color-border)] pl-3 space-y-0.5">
+        <div className="ml-3 mt-1 border-l border-[var(--fds-color-border)] pl-3 space-y-0.5">
           {item.children.map((child) => (
             <NavGroup key={child.href} item={child} />
           ))}
@@ -63,7 +63,7 @@ function NavGroup({ item }: { item: NavItem }) {
 export function Sidebar() {
   return (
     <aside
-      className="fixed left-0 top-[var(--header-height)] h-[calc(100vh-var(--header-height))] w-[var(--sidebar-width)] border-r border-[var(--tds-color-border)] bg-[var(--tds-color-bg-base)] overflow-y-auto"
+      className="fixed left-0 top-[var(--header-height)] h-[calc(100vh-var(--header-height))] w-[var(--sidebar-width)] border-r border-[var(--fds-color-border)] bg-[var(--fds-color-bg-base)] overflow-y-auto"
       style={{ zIndex: 10 }}
     >
       <nav className="px-4 py-6 space-y-1">

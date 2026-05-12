@@ -5,7 +5,7 @@ import { TableOfContents } from '@/components/layout/TableOfContents'
 import { PropsTable } from '@/components/docs/PropsTable'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 import { CodeBlock } from '@/components/docs/CodeBlock'
-import { Checkbox } from '@/components/tds/Checkbox'
+import { Checkbox } from '@/components/fds/Checkbox'
 
 export default function CheckboxPage() {
   const [checked, setChecked] = useState(false)
@@ -26,14 +26,14 @@ export default function CheckboxPage() {
   return (
     <div className="flex gap-8">
       <article className="flex-1 max-w-3xl px-8 py-10">
-        <div className="mb-2 text-sm text-[var(--tds-color-text-tertiary)] font-medium">컴포넌트</div>
-        <h1 className="text-4xl font-bold text-[var(--tds-color-text-primary)] mb-3">Checkbox</h1>
-        <p className="text-lg text-[var(--tds-color-text-secondary)] mb-10 leading-relaxed">
+        <div className="mb-2 text-sm text-[var(--fds-color-text-tertiary)] font-medium">컴포넌트</div>
+        <h1 className="text-4xl font-bold text-[var(--fds-color-text-primary)] mb-3">Checkbox</h1>
+        <p className="text-lg text-[var(--fds-color-text-secondary)] mb-10 leading-relaxed">
           단일 또는 다중 선택을 위한 체크박스 컴포넌트입니다.
         </p>
 
         <section id="basic" className="mt-2">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">기본 사용</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">기본 사용</h2>
           <ComponentPreview>
             <div className="flex flex-col gap-3">
               <Checkbox
@@ -50,10 +50,10 @@ export default function CheckboxPage() {
         </section>
 
         <section id="group" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">전체 선택 패턴</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">전체 선택 패턴</h2>
           <ComponentPreview>
             <div className="flex flex-col gap-2 w-full max-w-xs">
-              <div className="pb-2 border-b border-[var(--tds-color-border)]">
+              <div className="pb-2 border-b border-[var(--fds-color-border)]">
                 <Checkbox
                   checked={all}
                   onChange={handleAll}
@@ -73,7 +73,7 @@ export default function CheckboxPage() {
         </section>
 
         <section id="props" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Props</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Props</h2>
           <PropsTable
             props={[
               { name: 'label', type: 'string', description: '체크박스 레이블' },
@@ -87,9 +87,9 @@ export default function CheckboxPage() {
         </section>
 
         <section id="code" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">코드 예시</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">코드 예시</h2>
           <CodeBlock
-            code={`import { Checkbox } from '@/components/tds'
+            code={`import { Checkbox } from '@/components/fds'
 import { useState } from 'react'
 
 function AgreementForm() {

@@ -28,10 +28,10 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           />
           <div
             className={cn(
-              'w-5 h-5 rounded-[var(--tds-radius-sm)] border-2 transition-all',
-              'border-[var(--tds-color-border-strong)]',
-              'peer-checked:bg-[var(--tds-color-primary)] peer-checked:border-[var(--tds-color-primary)]',
-              'peer-focus-visible:ring-2 peer-focus-visible:ring-[var(--tds-color-primary)] peer-focus-visible:ring-offset-2',
+              'w-5 h-5 rounded-[var(--fds-radius-sm)] border-2 transition-all',
+              'border-[var(--fds-color-border-strong)]',
+              'peer-checked:bg-[var(--fds-color-primary)] peer-checked:border-[var(--fds-color-primary)]',
+              'peer-focus-visible:ring-2 peer-focus-visible:ring-[var(--fds-color-primary)] peer-focus-visible:ring-offset-2',
               className
             )}
           />
@@ -48,10 +48,10 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         {(label || description) && (
           <div>
             {label && (
-              <p className="text-sm font-medium text-[var(--tds-color-text-primary)]">{label}</p>
+              <p className="text-sm font-medium text-[var(--fds-color-text-primary)]">{label}</p>
             )}
             {description && (
-              <p className="text-sm text-[var(--tds-color-text-secondary)] mt-0.5">{description}</p>
+              <p className="text-sm text-[var(--fds-color-text-secondary)] mt-0.5">{description}</p>
             )}
           </div>
         )}

@@ -22,30 +22,30 @@ function Card({
       <div
         className="rounded-xl border-2 overflow-hidden"
         style={{
-          borderColor: isDo ? 'var(--tds-color-success)' : 'var(--tds-color-danger)',
+          borderColor: isDo ? 'var(--fds-color-success)' : 'var(--fds-color-danger)',
         }}
       >
         {item.preview && (
-          <div className="p-6 bg-[var(--tds-color-bg-elevated)] flex items-center justify-center min-h-[100px]">
+          <div className="p-6 bg-[var(--fds-color-bg-elevated)] flex items-center justify-center min-h-[100px]">
             {item.preview}
           </div>
         )}
         <div
           className="px-4 py-3"
           style={{
-            background: isDo ? 'var(--tds-color-success-subtle)' : 'var(--tds-color-danger-subtle)',
+            background: isDo ? 'var(--fds-color-success-subtle)' : 'var(--fds-color-danger-subtle)',
           }}
         >
           <div className="flex items-center gap-2 mb-1">
             <span
               className="text-xs font-bold uppercase tracking-wider"
-              style={{ color: isDo ? 'var(--tds-color-success)' : 'var(--tds-color-danger)' }}
+              style={{ color: isDo ? 'var(--fds-color-success)' : 'var(--fds-color-danger)' }}
             >
               {isDo ? '✓ Do' : '✗ Don\'t'}
             </span>
           </div>
-          <p className="text-sm font-medium text-[var(--tds-color-text-primary)]">{item.label}</p>
-          <p className="text-sm text-[var(--tds-color-text-secondary)] mt-0.5">{item.description}</p>
+          <p className="text-sm font-medium text-[var(--fds-color-text-primary)]">{item.label}</p>
+          <p className="text-sm text-[var(--fds-color-text-secondary)] mt-0.5">{item.description}</p>
         </div>
       </div>
     </div>

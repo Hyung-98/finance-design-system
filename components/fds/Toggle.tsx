@@ -34,8 +34,8 @@ export const Toggle = forwardRef<HTMLInputElement, ToggleProps>(
           <div
             className={cn(
               'rounded-full transition-colors duration-200',
-              'bg-[var(--tds-color-border-strong)] peer-checked:bg-[var(--tds-color-primary)]',
-              'peer-focus-visible:ring-2 peer-focus-visible:ring-[var(--tds-color-primary)] peer-focus-visible:ring-offset-2',
+              'bg-[var(--fds-color-border-strong)] peer-checked:bg-[var(--fds-color-primary)]',
+              'peer-focus-visible:ring-2 peer-focus-visible:ring-[var(--fds-color-primary)] peer-focus-visible:ring-offset-2',
               trackSize,
               className
             )}
@@ -51,10 +51,10 @@ export const Toggle = forwardRef<HTMLInputElement, ToggleProps>(
         {(label || description) && (
           <div>
             {label && (
-              <p className="text-sm font-medium text-[var(--tds-color-text-primary)]">{label}</p>
+              <p className="text-sm font-medium text-[var(--fds-color-text-primary)]">{label}</p>
             )}
             {description && (
-              <p className="text-sm text-[var(--tds-color-text-secondary)] mt-0.5">{description}</p>
+              <p className="text-sm text-[var(--fds-color-text-secondary)] mt-0.5">{description}</p>
             )}
           </div>
         )}

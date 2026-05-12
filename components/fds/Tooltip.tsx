@@ -40,10 +40,10 @@ export function Tooltip({ content, children, placement = 'top', delay = 0, class
         <span
           role="tooltip"
           className={cn(
-            'absolute z-[var(--tds-z-tooltip,500)] whitespace-nowrap pointer-events-none',
-            'px-2.5 py-1.5 rounded-[var(--tds-radius-md)]',
-            'bg-[var(--tds-color-gray-800)] text-white text-xs font-medium',
-            'shadow-[var(--tds-shadow-md)]',
+            'absolute z-[var(--fds-z-tooltip,500)] whitespace-nowrap pointer-events-none',
+            'px-2.5 py-1.5 rounded-[var(--fds-radius-md)]',
+            'bg-[var(--fds-color-gray-800)] text-white text-xs font-medium',
+            'shadow-[var(--fds-shadow-md)]',
             'animate-in fade-in duration-150',
             placementStyles[placement],
             className

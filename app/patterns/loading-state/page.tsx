@@ -3,43 +3,43 @@
 import { TableOfContents } from '@/components/layout/TableOfContents'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 import { DosDonts } from '@/components/docs/DosDonts'
-import { Spinner } from '@/components/tds/Spinner'
-import { Skeleton, SkeletonCard } from '@/components/tds/Skeleton'
-import { Progress } from '@/components/tds/Progress'
+import { Spinner } from '@/components/fds/Spinner'
+import { Skeleton, SkeletonCard } from '@/components/fds/Skeleton'
+import { Progress } from '@/components/fds/Progress'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 
 export default function LoadingStatePage() {
   return (
     <div className="flex gap-8">
       <article className="flex-1 max-w-3xl px-8 py-10">
-        <div className="mb-2 text-sm text-[var(--tds-color-text-tertiary)] font-medium">패턴</div>
-        <h1 className="text-4xl font-bold text-[var(--tds-color-text-primary)] mb-3">Loading State</h1>
-        <p className="text-lg text-[var(--tds-color-text-secondary)] mb-10 leading-relaxed">
+        <div className="mb-2 text-sm text-[var(--fds-color-text-tertiary)] font-medium">패턴</div>
+        <h1 className="text-4xl font-bold text-[var(--fds-color-text-primary)] mb-3">Loading State</h1>
+        <p className="text-lg text-[var(--fds-color-text-secondary)] mb-10 leading-relaxed">
           데이터 로딩 중 상태를 표현하는 패턴입니다.
           Spinner, Skeleton, Progress Bar 중 상황에 맞는 것을 선택합니다.
         </p>
 
         <section id="decision">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">선택 기준</h2>
-          <div className="overflow-x-auto rounded-xl border border-[var(--tds-color-border)]">
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">선택 기준</h2>
+          <div className="overflow-x-auto rounded-xl border border-[var(--fds-color-border)]">
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-[var(--tds-color-bg-elevated)] border-b border-[var(--tds-color-border)]">
-                  <th className="text-left px-4 py-3 font-semibold text-[var(--tds-color-text-primary)]">컴포넌트</th>
-                  <th className="text-left px-4 py-3 font-semibold text-[var(--tds-color-text-primary)]">언제 사용</th>
-                  <th className="text-left px-4 py-3 font-semibold text-[var(--tds-color-text-primary)]">예시</th>
+                <tr className="bg-[var(--fds-color-bg-elevated)] border-b border-[var(--fds-color-border)]">
+                  <th className="text-left px-4 py-3 font-semibold text-[var(--fds-color-text-primary)]">컴포넌트</th>
+                  <th className="text-left px-4 py-3 font-semibold text-[var(--fds-color-text-primary)]">언제 사용</th>
+                  <th className="text-left px-4 py-3 font-semibold text-[var(--fds-color-text-primary)]">예시</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[var(--tds-color-border)]">
+              <tbody className="divide-y divide-[var(--fds-color-border)]">
                 {[
                   ['Skeleton', '구조가 예측 가능한 콘텐츠', '잔액 카드, 거래 목록, 프로필'],
                   ['Spinner', '짧은 처리 대기 (< 2초)', '버튼 처리, API 호출, 폼 제출'],
                   ['Progress Bar', '진행률을 알 수 있는 작업', '파일 업로드, 다운로드, 다단계 온보딩'],
                 ].map(([comp, when, ex]) => (
                   <tr key={comp}>
-                    <td className="px-4 py-3 font-medium text-[var(--tds-color-primary)]">{comp}</td>
-                    <td className="px-4 py-3 text-[var(--tds-color-text-secondary)]">{when}</td>
-                    <td className="px-4 py-3 text-[var(--tds-color-text-tertiary)]">{ex}</td>
+                    <td className="px-4 py-3 font-medium text-[var(--fds-color-primary)]">{comp}</td>
+                    <td className="px-4 py-3 text-[var(--fds-color-text-secondary)]">{when}</td>
+                    <td className="px-4 py-3 text-[var(--fds-color-text-tertiary)]">{ex}</td>
                   </tr>
                 ))}
               </tbody>
@@ -48,12 +48,12 @@ export default function LoadingStatePage() {
         </section>
 
         <section id="skeleton-pattern" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Skeleton 패턴</h2>
-          <p className="text-sm text-[var(--tds-color-text-secondary)] mb-4">
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Skeleton 패턴</h2>
+          <p className="text-sm text-[var(--fds-color-text-secondary)] mb-4">
             실제 레이아웃과 유사한 플레이스홀더로 CLS(레이아웃 이동)를 최소화합니다.
           </p>
           <ComponentPreview label="계좌 카드 로딩">
-            <div className="w-full max-w-sm p-5 rounded-2xl border border-[var(--tds-color-border)] bg-[var(--tds-color-bg-base)]">
+            <div className="w-full max-w-sm p-5 rounded-2xl border border-[var(--fds-color-border)] bg-[var(--fds-color-bg-base)]">
               <div className="flex items-center gap-3 mb-4">
                 <Skeleton className="w-10 h-10 rounded-full" />
                 <div className="flex-1 space-y-2">
@@ -75,17 +75,17 @@ export default function LoadingStatePage() {
         </section>
 
         <section id="spinner-pattern" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Spinner 패턴</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Spinner 패턴</h2>
           <ComponentPreview label="페이지 초기 로딩">
             <div className="flex flex-col items-center gap-3 py-8">
               <Spinner size="lg" />
-              <p className="text-sm text-[var(--tds-color-text-secondary)]">잔액을 불러오는 중...</p>
+              <p className="text-sm text-[var(--fds-color-text-secondary)]">잔액을 불러오는 중...</p>
             </div>
           </ComponentPreview>
           <ComponentPreview label="인라인 로딩 (결과 갱신)">
             <div className="w-full max-w-sm">
-              <div className="flex items-center justify-between p-4 rounded-xl border border-[var(--tds-color-border)]">
-                <span className="text-sm text-[var(--tds-color-text-secondary)]">현재 환율 계산 중</span>
+              <div className="flex items-center justify-between p-4 rounded-xl border border-[var(--fds-color-border)]">
+                <span className="text-sm text-[var(--fds-color-text-secondary)]">현재 환율 계산 중</span>
                 <Spinner size="sm" />
               </div>
             </div>
@@ -93,12 +93,12 @@ export default function LoadingStatePage() {
         </section>
 
         <section id="progress-pattern" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Progress 패턴</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Progress 패턴</h2>
           <ComponentPreview label="파일 업로드">
             <div className="w-full max-w-sm space-y-3">
               <div className="flex items-center justify-between text-sm">
-                <span className="text-[var(--tds-color-text-primary)] font-medium">증빙 서류 업로드</span>
-                <span className="text-[var(--tds-color-text-tertiary)]">2.3 MB / 5 MB</span>
+                <span className="text-[var(--fds-color-text-primary)] font-medium">증빙 서류 업로드</span>
+                <span className="text-[var(--fds-color-text-tertiary)]">2.3 MB / 5 MB</span>
               </div>
               <Progress value={46} variant="primary" showLabel />
             </div>
@@ -106,8 +106,8 @@ export default function LoadingStatePage() {
           <ComponentPreview label="온보딩 단계">
             <div className="w-full max-w-sm">
               <div className="flex justify-between text-sm mb-3">
-                <span className="text-[var(--tds-color-text-secondary)]">2단계: 신분증 촬영</span>
-                <span className="text-[var(--tds-color-text-tertiary)]">2 / 4</span>
+                <span className="text-[var(--fds-color-text-secondary)]">2단계: 신분증 촬영</span>
+                <span className="text-[var(--fds-color-text-tertiary)]">2 / 4</span>
               </div>
               <Progress value={50} size="sm" />
             </div>
@@ -115,7 +115,7 @@ export default function LoadingStatePage() {
         </section>
 
         <section id="code" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">코드 예시</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">코드 예시</h2>
           <CodeBlock
             code={`// 조건부 로딩 상태 처리 패턴
 function AccountCard({ accountId }) {
@@ -166,7 +166,7 @@ function TransferButton({ onTransfer }) {
         </section>
 
         <section id="dos-donts" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Do / Don't</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Do / Don't</h2>
           <DosDonts
             dos={[
               { label: 'Skeleton 우선', description: '콘텐츠 구조를 알 수 있다면 Spinner 대신 Skeleton을 사용해 더 나은 체감 성능을 제공합니다.' },

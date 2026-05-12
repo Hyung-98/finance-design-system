@@ -5,8 +5,8 @@ import { TableOfContents } from '@/components/layout/TableOfContents'
 import { PropsTable } from '@/components/docs/PropsTable'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 import { DosDonts } from '@/components/docs/DosDonts'
-import { Progress, StepProgress } from '@/components/tds/Progress'
-import { Button } from '@/components/tds/Button'
+import { Progress, StepProgress } from '@/components/fds/Progress'
+import { Button } from '@/components/fds/Button'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 
 function AnimatedDemo() {
@@ -28,7 +28,7 @@ function StepDemo() {
   const total = 5
   return (
     <div className="w-full max-w-sm space-y-4">
-      <div className="flex justify-between text-sm text-[var(--tds-color-text-secondary)]">
+      <div className="flex justify-between text-sm text-[var(--fds-color-text-secondary)]">
         <span>단계 {step} / {total}</span>
       </div>
       <StepProgress current={step} total={total} />
@@ -44,22 +44,22 @@ export default function ProgressPage() {
   return (
     <div className="flex gap-8">
       <article className="flex-1 max-w-3xl px-8 py-10">
-        <div className="mb-2 text-sm text-[var(--tds-color-text-tertiary)] font-medium">컴포넌트</div>
-        <h1 className="text-4xl font-bold text-[var(--tds-color-text-primary)] mb-3">Progress</h1>
-        <p className="text-lg text-[var(--tds-color-text-secondary)] mb-10 leading-relaxed">
+        <div className="mb-2 text-sm text-[var(--fds-color-text-tertiary)] font-medium">컴포넌트</div>
+        <h1 className="text-4xl font-bold text-[var(--fds-color-text-primary)] mb-3">Progress</h1>
+        <p className="text-lg text-[var(--fds-color-text-secondary)] mb-10 leading-relaxed">
           작업 진행률이나 단계를 시각적으로 표시하는 컴포넌트입니다.
           파일 업로드, 온보딩 단계 등에 사용합니다.
         </p>
 
         <section id="basic">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">기본 사용</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">기본 사용</h2>
           <ComponentPreview label="인터랙티브 데모">
             <AnimatedDemo />
           </ComponentPreview>
         </section>
 
         <section id="variants" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Variants</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Variants</h2>
           <ComponentPreview label="primary / success / warning / danger">
             <div className="w-full max-w-sm space-y-4">
               <Progress value={70} variant="primary" label="저장 중" showLabel />
@@ -71,7 +71,7 @@ export default function ProgressPage() {
         </section>
 
         <section id="sizes" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Sizes</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Sizes</h2>
           <ComponentPreview label="sm / md / lg">
             <div className="w-full max-w-sm space-y-4">
               <Progress value={60} size="sm" label="sm" />
@@ -82,8 +82,8 @@ export default function ProgressPage() {
         </section>
 
         <section id="step-progress" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">StepProgress</h2>
-          <p className="text-sm text-[var(--tds-color-text-secondary)] mb-4">
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">StepProgress</h2>
+          <p className="text-sm text-[var(--fds-color-text-secondary)] mb-4">
             온보딩, 가입 절차 등 단계별 진행을 세그먼트로 표시합니다.
           </p>
           <ComponentPreview label="단계 진행 데모">
@@ -99,8 +99,8 @@ export default function ProgressPage() {
         </section>
 
         <section id="props" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Props</h2>
-          <h3 className="text-base font-semibold text-[var(--tds-color-text-primary)] mb-3">Progress</h3>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Props</h2>
+          <h3 className="text-base font-semibold text-[var(--fds-color-text-primary)] mb-3">Progress</h3>
           <PropsTable
             props={[
               { name: 'value', type: 'number', required: true, description: '현재 진행값 (0 ~ max)' },
@@ -111,7 +111,7 @@ export default function ProgressPage() {
               { name: 'label', type: 'string', description: '진행 항목 설명 레이블' },
             ]}
           />
-          <h3 className="text-base font-semibold text-[var(--tds-color-text-primary)] mb-3 mt-6">StepProgress</h3>
+          <h3 className="text-base font-semibold text-[var(--fds-color-text-primary)] mb-3 mt-6">StepProgress</h3>
           <PropsTable
             props={[
               { name: 'current', type: 'number', required: true, description: '현재 완료된 단계 수' },
@@ -121,9 +121,9 @@ export default function ProgressPage() {
         </section>
 
         <section id="code" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">코드 예시</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">코드 예시</h2>
           <CodeBlock
-            code={`import { Progress, StepProgress } from '@/components/tds'
+            code={`import { Progress, StepProgress } from '@/components/fds'
 
 // 기본 진행 바
 <Progress value={75} label="업로드 중" showLabel />
@@ -150,7 +150,7 @@ function UploadProgress({ progress }: { progress: number }) {
         </section>
 
         <section id="dos-donts" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Do / Don't</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Do / Don't</h2>
           <DosDonts
             dos={[
               { label: 'StepProgress는 온보딩에', description: '가입 절차, 설정 단계처럼 명확한 단계 수가 있을 때 StepProgress를 사용합니다.' },

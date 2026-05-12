@@ -10,9 +10,9 @@ export interface CardProps {
 }
 
 const variantStyles = {
-  default: 'bg-[var(--tds-color-bg-base)] border border-[var(--tds-color-border)]',
-  elevated: 'bg-[var(--tds-color-bg-base)] shadow-[var(--tds-shadow-md)]',
-  outline: 'bg-transparent border border-[var(--tds-color-border)]',
+  default: 'bg-[var(--fds-color-bg-base)] border border-[var(--fds-color-border)]',
+  elevated: 'bg-[var(--fds-color-bg-base)] shadow-[var(--fds-shadow-md)]',
+  outline: 'bg-transparent border border-[var(--fds-color-border)]',
 }
 const paddingStyles = { none: '', sm: 'p-4', md: 'p-5', lg: 'p-6' }
 
@@ -22,11 +22,11 @@ export function Card({ children, variant = 'default', padding = 'md', interactiv
     <Tag
       onClick={onClick}
       className={cn(
-        'rounded-[var(--tds-radius-xl)] w-full text-left',
+        'rounded-[var(--fds-radius-xl)] w-full text-left',
         variantStyles[variant],
         paddingStyles[padding],
-        interactive && 'cursor-pointer hover:shadow-[var(--tds-shadow-lg)] transition-shadow',
-        onClick && 'cursor-pointer hover:shadow-[var(--tds-shadow-lg)] transition-shadow active:scale-[0.99]',
+        interactive && 'cursor-pointer hover:shadow-[var(--fds-shadow-lg)] transition-shadow',
+        onClick && 'cursor-pointer hover:shadow-[var(--fds-shadow-lg)] transition-shadow active:scale-[0.99]',
         className
       )}
     >
@@ -40,11 +40,11 @@ export function CardHeader({ children, className }: { children: React.ReactNode;
 }
 
 export function CardTitle({ children, className }: { children: React.ReactNode; className?: string }) {
-  return <h3 className={cn('text-base font-bold text-[var(--tds-color-text-primary)]', className)}>{children}</h3>
+  return <h3 className={cn('text-base font-bold text-[var(--fds-color-text-primary)]', className)}>{children}</h3>
 }
 
 export function CardDescription({ children, className }: { children: React.ReactNode; className?: string }) {
-  return <p className={cn('text-sm text-[var(--tds-color-text-secondary)] mt-1', className)}>{children}</p>
+  return <p className={cn('text-sm text-[var(--fds-color-text-secondary)] mt-1', className)}>{children}</p>
 }
 
 export function CardFooter({ children, className }: { children: React.ReactNode; className?: string }) {

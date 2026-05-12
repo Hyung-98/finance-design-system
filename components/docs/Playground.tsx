@@ -29,27 +29,27 @@ export function Playground({ config, render, codeTemplate }: PlaygroundProps) {
     setValues((prev) => ({ ...prev, [key]: value }))
 
   return (
-    <div className="rounded-xl border border-[var(--tds-color-border)] overflow-hidden my-6">
+    <div className="rounded-xl border border-[var(--fds-color-border)] overflow-hidden my-6">
       {/* Preview area */}
       <div
         className="min-h-[160px] flex items-center justify-center p-8
-          bg-[radial-gradient(var(--tds-color-gray-200)_1px,transparent_1px)]
-          dark:bg-[radial-gradient(var(--tds-color-border)_1px,transparent_1px)]
-          [background-size:20px_20px] bg-[var(--tds-color-bg-base)]"
+          bg-[radial-gradient(var(--fds-color-gray-200)_1px,transparent_1px)]
+          dark:bg-[radial-gradient(var(--fds-color-border)_1px,transparent_1px)]
+          [background-size:20px_20px] bg-[var(--fds-color-bg-base)]"
       >
         {render(values)}
       </div>
 
       {/* Controls + Code */}
-      <div className="border-t border-[var(--tds-color-border)] grid grid-cols-1 md:grid-cols-[240px_1fr]">
+      <div className="border-t border-[var(--fds-color-border)] grid grid-cols-1 md:grid-cols-[240px_1fr]">
         {/* Controls */}
-        <div className="p-4 border-b md:border-b-0 md:border-r border-[var(--tds-color-border)] bg-[var(--tds-color-bg-elevated)] space-y-4">
-          <p className="text-xs font-semibold text-[var(--tds-color-text-tertiary)] uppercase tracking-wider">
+        <div className="p-4 border-b md:border-b-0 md:border-r border-[var(--fds-color-border)] bg-[var(--fds-color-bg-elevated)] space-y-4">
+          <p className="text-xs font-semibold text-[var(--fds-color-text-tertiary)] uppercase tracking-wider">
             Props
           </p>
           {Object.entries(config).map(([key, ctrl]) => (
             <div key={key}>
-              <label className="text-xs font-medium text-[var(--tds-color-text-secondary)] mb-1 block font-mono">
+              <label className="text-xs font-medium text-[var(--fds-color-text-secondary)] mb-1 block font-mono">
                 {key}
               </label>
               {ctrl.type === 'boolean' && (
@@ -59,7 +59,7 @@ export function Playground({ config, render, codeTemplate }: PlaygroundProps) {
                   onClick={() => set(key, !values[key])}
                   className="relative w-10 h-5 rounded-full transition-colors"
                   style={{
-                    background: values[key] ? 'var(--tds-color-primary)' : 'var(--tds-color-border-strong)',
+                    background: values[key] ? 'var(--fds-color-primary)' : 'var(--fds-color-border-strong)',
                   }}
                 >
                   <span
@@ -73,14 +73,14 @@ export function Playground({ config, render, codeTemplate }: PlaygroundProps) {
                   type="text"
                   value={String(values[key])}
                   onChange={(e) => set(key, e.target.value)}
-                  className="w-full px-2.5 py-1.5 text-sm rounded-lg border border-[var(--tds-color-border)] bg-[var(--tds-color-bg-base)] text-[var(--tds-color-text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--tds-color-primary)]"
+                  className="w-full px-2.5 py-1.5 text-sm rounded-lg border border-[var(--fds-color-border)] bg-[var(--fds-color-bg-base)] text-[var(--fds-color-text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--fds-color-primary)]"
                 />
               )}
               {ctrl.type === 'select' && (
                 <select
                   value={String(values[key])}
                   onChange={(e) => set(key, e.target.value)}
-                  className="w-full px-2.5 py-1.5 text-sm rounded-lg border border-[var(--tds-color-border)] bg-[var(--tds-color-bg-base)] text-[var(--tds-color-text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--tds-color-primary)]"
+                  className="w-full px-2.5 py-1.5 text-sm rounded-lg border border-[var(--fds-color-border)] bg-[var(--fds-color-bg-base)] text-[var(--fds-color-text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--fds-color-primary)]"
                 >
                   {ctrl.options.map((opt) => (
                     <option key={opt} value={opt}>{opt}</option>
@@ -94,7 +94,7 @@ export function Playground({ config, render, codeTemplate }: PlaygroundProps) {
                   min={ctrl.min}
                   max={ctrl.max}
                   onChange={(e) => set(key, Number(e.target.value))}
-                  className="w-full px-2.5 py-1.5 text-sm rounded-lg border border-[var(--tds-color-border)] bg-[var(--tds-color-bg-base)] text-[var(--tds-color-text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--tds-color-primary)]"
+                  className="w-full px-2.5 py-1.5 text-sm rounded-lg border border-[var(--fds-color-border)] bg-[var(--fds-color-bg-base)] text-[var(--fds-color-text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--fds-color-primary)]"
                 />
               )}
             </div>

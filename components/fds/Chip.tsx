@@ -31,19 +31,19 @@ export function Chip({
 
   const baseStyles = cn(
     'inline-flex items-center rounded-full font-medium transition-all border',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tds-color-primary)] focus-visible:ring-offset-1',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--fds-color-primary)] focus-visible:ring-offset-1',
     sizeStyles[size],
     disabled && 'opacity-40 cursor-not-allowed',
     className
   )
 
   const selectedStyles = selected
-    ? 'bg-[var(--tds-color-primary-subtle)] border-[var(--tds-color-primary)] text-[var(--tds-color-primary)]'
-    : 'bg-[var(--tds-color-bg-elevated)] border-[var(--tds-color-border)] text-[var(--tds-color-text-secondary)] hover:border-[var(--tds-color-border-strong)] hover:text-[var(--tds-color-text-primary)]'
+    ? 'bg-[var(--fds-color-primary-subtle)] border-[var(--fds-color-primary)] text-[var(--fds-color-primary)]'
+    : 'bg-[var(--fds-color-bg-elevated)] border-[var(--fds-color-border)] text-[var(--fds-color-text-secondary)] hover:border-[var(--fds-color-border-strong)] hover:text-[var(--fds-color-text-primary)]'
 
   if (variant === 'tag') {
     return (
-      <span className={cn(baseStyles, 'bg-[var(--tds-color-bg-elevated)] border-[var(--tds-color-border)] text-[var(--tds-color-text-secondary)]')}>
+      <span className={cn(baseStyles, 'bg-[var(--fds-color-bg-elevated)] border-[var(--fds-color-border)] text-[var(--fds-color-text-secondary)]')}>
         {children}
         {onRemove && (
           <button
@@ -51,7 +51,7 @@ export function Chip({
             onClick={onRemove}
             disabled={disabled}
             aria-label="제거"
-            className="ml-0.5 rounded-full hover:text-[var(--tds-color-text-primary)] focus-visible:outline-none"
+            className="ml-0.5 rounded-full hover:text-[var(--fds-color-text-primary)] focus-visible:outline-none"
           >
             <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />

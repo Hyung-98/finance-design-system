@@ -4,22 +4,22 @@ import { TableOfContents } from '@/components/layout/TableOfContents'
 import { PropsTable } from '@/components/docs/PropsTable'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 import { DosDonts } from '@/components/docs/DosDonts'
-import { Radio, RadioGroup } from '@/components/tds/Radio'
+import { Radio, RadioGroup } from '@/components/fds/Radio'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 
 export default function RadioPage() {
   return (
     <div className="flex gap-8">
       <article className="flex-1 max-w-3xl px-8 py-10">
-        <div className="mb-2 text-sm text-[var(--tds-color-text-tertiary)] font-medium">컴포넌트</div>
-        <h1 className="text-4xl font-bold text-[var(--tds-color-text-primary)] mb-3">Radio</h1>
-        <p className="text-lg text-[var(--tds-color-text-secondary)] mb-10 leading-relaxed">
+        <div className="mb-2 text-sm text-[var(--fds-color-text-tertiary)] font-medium">컴포넌트</div>
+        <h1 className="text-4xl font-bold text-[var(--fds-color-text-primary)] mb-3">Radio</h1>
+        <p className="text-lg text-[var(--fds-color-text-secondary)] mb-10 leading-relaxed">
           여러 선택지 중 하나만 선택할 수 있는 컴포넌트입니다.
           이체 수단 선택, 약관 동의 항목 등에 사용합니다.
         </p>
 
         <section id="overview">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">기본 사용</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">기본 사용</h2>
           <ComponentPreview label="Radio 단독">
             <div className="flex flex-col gap-3">
               <Radio name="demo1" value="a" label="즉시 이체" defaultChecked />
@@ -30,8 +30,8 @@ export default function RadioPage() {
         </section>
 
         <section id="radio-group" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">RadioGroup</h2>
-          <p className="text-sm text-[var(--tds-color-text-secondary)] mb-4">
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">RadioGroup</h2>
+          <p className="text-sm text-[var(--fds-color-text-secondary)] mb-4">
             관련 Radio를 그룹으로 묶어 fieldset/legend로 의미를 명확히 합니다.
           </p>
           <ComponentPreview label="수직 배열 (기본)">
@@ -65,7 +65,7 @@ export default function RadioPage() {
         </section>
 
         <section id="with-description" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">설명 포함</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">설명 포함</h2>
           <ComponentPreview label="description 있는 옵션">
             <div className="w-full max-w-sm">
               <RadioGroup
@@ -83,8 +83,8 @@ export default function RadioPage() {
         </section>
 
         <section id="props" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Props</h2>
-          <h3 className="text-base font-semibold text-[var(--tds-color-text-primary)] mb-3">Radio</h3>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Props</h2>
+          <h3 className="text-base font-semibold text-[var(--fds-color-text-primary)] mb-3">Radio</h3>
           <PropsTable
             props={[
               { name: 'label', type: 'string', description: '라디오 버튼 레이블' },
@@ -93,7 +93,7 @@ export default function RadioPage() {
               { name: '...InputHTMLAttributes', type: '—', description: 'name, value, checked, onChange 등 input 속성 전달 가능' },
             ]}
           />
-          <h3 className="text-base font-semibold text-[var(--tds-color-text-primary)] mb-3 mt-6">RadioGroup</h3>
+          <h3 className="text-base font-semibold text-[var(--fds-color-text-primary)] mb-3 mt-6">RadioGroup</h3>
           <PropsTable
             props={[
               { name: 'name', type: 'string', required: true, description: '라디오 그룹 name (폼 전송에 사용)' },
@@ -108,9 +108,9 @@ export default function RadioPage() {
         </section>
 
         <section id="code" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">코드 예시</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">코드 예시</h2>
           <CodeBlock
-            code={`import { RadioGroup } from '@/components/tds'
+            code={`import { RadioGroup } from '@/components/fds'
 import { useState } from 'react'
 
 // 비제어
@@ -141,7 +141,7 @@ function TransferMethod() {
         </section>
 
         <section id="dos-donts" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Do / Don't</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Do / Don't</h2>
           <DosDonts
             dos={[
               { label: '2~5개 옵션에 사용', description: '옵션이 2~5개일 때 RadioGroup이 적합합니다. 더 많으면 Select를 사용하세요.' },

@@ -11,10 +11,10 @@ export interface ToastProps {
 }
 
 const variantStyles = {
-  default: 'bg-[var(--tds-color-gray-900)] dark:bg-[var(--tds-color-gray-100)] text-white dark:text-[var(--tds-color-gray-900)]',
-  success: 'bg-[var(--tds-color-success)] text-white',
-  danger: 'bg-[var(--tds-color-danger)] text-white',
-  warning: 'bg-[var(--tds-color-warning)] text-white',
+  default: 'bg-[var(--fds-color-gray-900)] dark:bg-[var(--fds-color-gray-100)] text-white dark:text-[var(--fds-color-gray-900)]',
+  success: 'bg-[var(--fds-color-success)] text-white',
+  danger: 'bg-[var(--fds-color-danger)] text-white',
+  warning: 'bg-[var(--fds-color-warning)] text-white',
 }
 
 const Icon = ({ variant }: { variant: ToastProps['variant'] }) => {
@@ -48,7 +48,7 @@ export function Toast({ message, description, variant = 'default', action, onClo
       role="status"
       aria-live="polite"
       className={cn(
-        'flex items-start gap-3 px-4 py-3 rounded-[var(--tds-radius-xl)] shadow-[var(--tds-shadow-lg)]',
+        'flex items-start gap-3 px-4 py-3 rounded-[var(--fds-radius-xl)] shadow-[var(--fds-shadow-lg)]',
         'max-w-sm w-full',
         variantStyles[variant]
       )}

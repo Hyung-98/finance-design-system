@@ -5,7 +5,7 @@ import { PropsTable } from '@/components/docs/PropsTable'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 import { Playground, type PlaygroundConfig } from '@/components/docs/Playground'
 import { DosDonts } from '@/components/docs/DosDonts'
-import { Select } from '@/components/tds/Select'
+import { Select } from '@/components/fds/Select'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 
 const bankOptions = [
@@ -28,15 +28,15 @@ export default function SelectPage() {
   return (
     <div className="flex gap-8">
       <article className="flex-1 max-w-3xl px-8 py-10">
-        <div className="mb-2 text-sm text-[var(--tds-color-text-tertiary)] font-medium">컴포넌트</div>
-        <h1 className="text-4xl font-bold text-[var(--tds-color-text-primary)] mb-3">Select</h1>
-        <p className="text-lg text-[var(--tds-color-text-secondary)] mb-10 leading-relaxed">
+        <div className="mb-2 text-sm text-[var(--fds-color-text-tertiary)] font-medium">컴포넌트</div>
+        <h1 className="text-4xl font-bold text-[var(--fds-color-text-primary)] mb-3">Select</h1>
+        <p className="text-lg text-[var(--fds-color-text-secondary)] mb-10 leading-relaxed">
           여러 옵션 중 하나를 선택하는 드롭다운 컴포넌트입니다.
           계좌 선택, 카테고리 선택 등 선택지가 많을 때 사용합니다.
         </p>
 
         <section id="playground">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">인터랙티브 데모</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">인터랙티브 데모</h2>
           <Playground
             config={playgroundConfig}
             render={(props) => (
@@ -60,7 +60,7 @@ export default function SelectPage() {
         </section>
 
         <section id="states" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">States</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">States</h2>
           <ComponentPreview label="기본">
             <div className="w-full max-w-sm">
               <Select options={bankOptions} label="은행 선택" placeholder="선택하세요" />
@@ -88,7 +88,7 @@ export default function SelectPage() {
         </section>
 
         <section id="with-disabled-options" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">비활성 옵션</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">비활성 옵션</h2>
           <ComponentPreview label="일부 옵션 비활성">
             <div className="w-full max-w-sm">
               <Select
@@ -105,7 +105,7 @@ export default function SelectPage() {
         </section>
 
         <section id="props" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Props</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Props</h2>
           <PropsTable
             props={[
               { name: 'options', type: 'SelectOption[]', required: true, description: '선택 옵션 배열 ({ value, label, disabled? })' },
@@ -122,9 +122,9 @@ export default function SelectPage() {
         </section>
 
         <section id="code" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">코드 예시</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">코드 예시</h2>
           <CodeBlock
-            code={`import { Select } from '@/components/tds'
+            code={`import { Select } from '@/components/fds'
 import { useState } from 'react'
 
 const banks = [
@@ -154,7 +154,7 @@ function BankSelect() {
         </section>
 
         <section id="dos-donts" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Do / Don't</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Do / Don't</h2>
           <DosDonts
             dos={[
               { label: '5개 이상일 때 Select 사용', description: '옵션이 5개 미만이면 RadioGroup을 고려하세요. Select는 옵션이 많을 때 적합합니다.' },

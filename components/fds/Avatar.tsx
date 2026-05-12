@@ -39,7 +39,7 @@ function getColor(name: string) {
 }
 
 export function Avatar({ src, alt, name, size = 'md', shape = 'circle', className }: AvatarProps) {
-  const shapeClass = shape === 'circle' ? 'rounded-full' : 'rounded-[var(--tds-radius-lg)]'
+  const shapeClass = shape === 'circle' ? 'rounded-full' : 'rounded-[var(--fds-radius-lg)]'
   const sizeClass = sizeStyles[size]
 
   if (src) {
@@ -72,14 +72,14 @@ export function Avatar({ src, alt, name, size = 'md', shape = 'circle', classNam
   return (
     <div
       className={cn(
-        'flex items-center justify-center bg-[var(--tds-color-bg-elevated)] shrink-0',
+        'flex items-center justify-center bg-[var(--fds-color-bg-elevated)] shrink-0',
         sizeClass,
         shapeClass,
         className
       )}
       aria-hidden="true"
     >
-      <svg className="w-1/2 h-1/2 text-[var(--tds-color-text-tertiary)]" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-1/2 h-1/2 text-[var(--fds-color-text-tertiary)]" fill="currentColor" viewBox="0 0 24 24">
         <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
       </svg>
     </div>
@@ -103,14 +103,14 @@ export function AvatarGroup({ avatars, max = 4, size = 'md' }: AvatarGroupProps)
           key={i}
           {...avatar}
           size={size}
-          className={cn('ring-2 ring-[var(--tds-color-bg-base)]', avatar.className)}
+          className={cn('ring-2 ring-[var(--fds-color-bg-base)]', avatar.className)}
         />
       ))}
       {overflow > 0 && (
         <div
           className={cn(
-            'flex items-center justify-center ring-2 ring-[var(--tds-color-bg-base)] rounded-full',
-            'bg-[var(--tds-color-bg-elevated)] text-[var(--tds-color-text-secondary)] font-medium shrink-0',
+            'flex items-center justify-center ring-2 ring-[var(--fds-color-bg-base)] rounded-full',
+            'bg-[var(--fds-color-bg-elevated)] text-[var(--fds-color-text-secondary)] font-medium shrink-0',
             sizeStyles[size]
           )}
         >

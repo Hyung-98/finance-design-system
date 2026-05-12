@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'toss-blue': {
+        'finance-blue': {
           50: '#EEF4FF',
           100: '#D6E8FF',
           200: '#ADD1FF',
@@ -22,7 +22,7 @@ const config: Config = {
           800: '#0C3D85',
           900: '#082C61',
         },
-        'toss-gray': {
+        'finance-gray': {
           50: '#F9FAFB',
           100: '#F2F4F6',
           200: '#E5E8EB',

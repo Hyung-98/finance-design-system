@@ -14,19 +14,19 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>(
           <input ref={ref} type="radio" disabled={disabled} className="sr-only peer" {...props} />
           <div className={cn(
             'w-5 h-5 rounded-full border-2 transition-all',
-            'border-[var(--tds-color-border-strong)]',
-            'peer-checked:border-[var(--tds-color-primary)]',
-            'peer-focus-visible:ring-2 peer-focus-visible:ring-[var(--tds-color-primary)] peer-focus-visible:ring-offset-2',
+            'border-[var(--fds-color-border-strong)]',
+            'peer-checked:border-[var(--fds-color-primary)]',
+            'peer-focus-visible:ring-2 peer-focus-visible:ring-[var(--fds-color-primary)] peer-focus-visible:ring-offset-2',
             className
           )} />
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-2.5 h-2.5 rounded-full bg-[var(--tds-color-primary)] scale-0 peer-checked:scale-100 transition-transform" />
+            <div className="w-2.5 h-2.5 rounded-full bg-[var(--fds-color-primary)] scale-0 peer-checked:scale-100 transition-transform" />
           </div>
         </div>
         {(label || description) && (
           <div>
-            {label && <p className="text-sm font-medium text-[var(--tds-color-text-primary)]">{label}</p>}
-            {description && <p className="text-sm text-[var(--tds-color-text-secondary)] mt-0.5">{description}</p>}
+            {label && <p className="text-sm font-medium text-[var(--fds-color-text-primary)]">{label}</p>}
+            {description && <p className="text-sm text-[var(--fds-color-text-secondary)] mt-0.5">{description}</p>}
           </div>
         )}
       </label>
@@ -57,7 +57,7 @@ export function RadioGroup({ name, value: controlled, defaultValue, onChange, op
   return (
     <fieldset>
       {label && (
-        <legend className="text-sm font-medium text-[var(--tds-color-text-primary)] mb-3">{label}</legend>
+        <legend className="text-sm font-medium text-[var(--fds-color-text-primary)] mb-3">{label}</legend>
       )}
       <div className={cn('flex gap-3', direction === 'vertical' ? 'flex-col' : 'flex-row flex-wrap')}>
         {options.map((opt) => (

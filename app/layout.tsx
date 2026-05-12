@@ -5,7 +5,7 @@ import { Sidebar } from '@/components/layout/Sidebar'
 import '@/styles/globals.css'
 
 export const metadata: Metadata = {
-  title: { default: 'Toss Design System Guide', template: '%s | TDS Guide' },
+  title: { default: 'Finance Design System Guide', template: '%s | FDS Guide' },
   description: '토스 디자인 시스템 개발자 가이드 — 컴포넌트, 토큰, 원칙을 한눈에',
 }
 

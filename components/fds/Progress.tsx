@@ -17,10 +17,10 @@ const sizeStyles = {
 }
 
 const variantStyles = {
-  primary: 'bg-[var(--tds-color-primary)]',
-  success: 'bg-[var(--tds-color-success)]',
-  warning: 'bg-[var(--tds-color-warning)]',
-  danger: 'bg-[var(--tds-color-danger)]',
+  primary: 'bg-[var(--fds-color-primary)]',
+  success: 'bg-[var(--fds-color-success)]',
+  warning: 'bg-[var(--fds-color-warning)]',
+  danger: 'bg-[var(--fds-color-danger)]',
 }
 
 export function Progress({
@@ -38,9 +38,9 @@ export function Progress({
     <div className={cn('w-full', className)}>
       {(showLabel || label) && (
         <div className="flex justify-between items-center mb-1.5">
-          {label && <span className="text-sm text-[var(--tds-color-text-secondary)]">{label}</span>}
+          {label && <span className="text-sm text-[var(--fds-color-text-secondary)]">{label}</span>}
           {showLabel && (
-            <span className="text-sm font-medium text-[var(--tds-color-text-primary)] ml-auto">
+            <span className="text-sm font-medium text-[var(--fds-color-text-primary)] ml-auto">
               {Math.round(percentage)}%
             </span>
           )}
@@ -48,7 +48,7 @@ export function Progress({
       )}
       <div
         className={cn(
-          'w-full rounded-full bg-[var(--tds-color-bg-elevated)] overflow-hidden',
+          'w-full rounded-full bg-[var(--fds-color-bg-elevated)] overflow-hidden',
           sizeStyles[size]
         )}
         role="progressbar"
@@ -80,8 +80,8 @@ export function StepProgress({ current, total, className }: StepProgressProps) {
           className={cn(
             'h-1 flex-1 rounded-full transition-all duration-300',
             i < current
-              ? 'bg-[var(--tds-color-primary)]'
-              : 'bg-[var(--tds-color-bg-elevated)]'
+              ? 'bg-[var(--fds-color-primary)]'
+              : 'bg-[var(--fds-color-bg-elevated)]'
           )}
         />
       ))}

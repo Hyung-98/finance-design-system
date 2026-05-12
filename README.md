@@ -75,7 +75,7 @@ npm start
 │   ├── patterns/          # Form, Empty/Error/Loading State 패턴
 │   └── changelog/         # 변경 이력
 ├── components/
-│   ├── tds/               # 디자인 시스템 컴포넌트 구현체
+│   ├── fds/               # 디자인 시스템 컴포넌트 구현체
 │   ├── docs/              # 문서용 컴포넌트 (Playground, PropsTable 등)
 │   └── layout/            # 헤더, 사이드바, TOC, 검색
 ├── lib/
@@ -94,12 +94,12 @@ CSS 변수 기반의 2레이어 토큰 구조를 사용합니다.
 
 ```css
 /* Primitive 토큰 — 원시 값 */
---tds-color-blue-500: #3182F6;
+--fds-color-blue-500: #3182F6;
 
 /* Semantic 토큰 — 의미 기반 */
---tds-color-primary: var(--tds-color-blue-500);
---tds-color-bg-base: #FFFFFF;        /* 라이트 */
---tds-color-bg-base: #111111;        /* 다크 */
+--fds-color-primary: var(--fds-color-blue-500);
+--fds-color-bg-base: #FFFFFF;        /* 라이트 */
+--fds-color-bg-base: #111111;        /* 다크 */
 ```
 
 ---

@@ -5,7 +5,7 @@ import { PropsTable } from '@/components/docs/PropsTable'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 import { Playground, type PlaygroundConfig } from '@/components/docs/Playground'
 import { DosDonts } from '@/components/docs/DosDonts'
-import { Button } from '@/components/tds/Button'
+import { Button } from '@/components/fds/Button'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 
 const playgroundConfig: PlaygroundConfig = {
@@ -33,16 +33,16 @@ export default function ButtonPage() {
   return (
     <div className="flex gap-8">
       <article className="flex-1 max-w-3xl px-8 py-10">
-        <div className="mb-2 text-sm text-[var(--tds-color-text-tertiary)] font-medium">컴포넌트</div>
-        <h1 className="text-4xl font-bold text-[var(--tds-color-text-primary)] mb-3">Button</h1>
-        <p className="text-lg text-[var(--tds-color-text-secondary)] mb-10 leading-relaxed">
+        <div className="mb-2 text-sm text-[var(--fds-color-text-tertiary)] font-medium">컴포넌트</div>
+        <h1 className="text-4xl font-bold text-[var(--fds-color-text-primary)] mb-3">Button</h1>
+        <p className="text-lg text-[var(--fds-color-text-secondary)] mb-10 leading-relaxed">
           사용자의 행동을 유도하는 가장 기본적인 인터랙티브 컴포넌트입니다.
           중요도에 따라 variant로 시각적 계층을 표현합니다.
         </p>
 
         {/* Playground */}
         <section id="playground">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">인터랙티브 데모</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">인터랙티브 데모</h2>
           <Playground
             config={playgroundConfig}
             render={(props) => (
@@ -62,7 +62,7 @@ export default function ButtonPage() {
 
         {/* Variants */}
         <section id="variants">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Variants</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Variants</h2>
           <ComponentPreview label="모든 variant">
             {(['primary', 'secondary', 'outline', 'ghost', 'danger'] as const).map((v) => (
               <Button key={v} variant={v}>{v}</Button>
@@ -76,9 +76,9 @@ export default function ButtonPage() {
               { variant: 'ghost', desc: '텍스트 링크처럼 최소 시각적 무게가 필요할 때' },
               { variant: 'danger', desc: '삭제, 비활성화 등 비가역적 액션에 사용' },
             ].map(({ variant, desc }) => (
-              <div key={variant} className="flex items-start gap-4 p-4 rounded-[var(--tds-radius-lg)] border border-[var(--tds-color-border)]">
+              <div key={variant} className="flex items-start gap-4 p-4 rounded-[var(--fds-radius-lg)] border border-[var(--fds-color-border)]">
                 <Button variant={variant as 'primary'} size="sm">{variant}</Button>
-                <p className="text-sm text-[var(--tds-color-text-secondary)] mt-1">{desc}</p>
+                <p className="text-sm text-[var(--fds-color-text-secondary)] mt-1">{desc}</p>
               </div>
             ))}
           </div>
@@ -86,7 +86,7 @@ export default function ButtonPage() {
 
         {/* Sizes */}
         <section id="sizes" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Sizes</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Sizes</h2>
           <ComponentPreview label="sm / md / lg">
             <Button size="sm">Small</Button>
             <Button size="md">Medium</Button>
@@ -96,7 +96,7 @@ export default function ButtonPage() {
 
         {/* States */}
         <section id="states" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">States</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">States</h2>
           <ComponentPreview label="기본 / 비활성 / 로딩">
             <Button>기본</Button>
             <Button disabled>비활성</Button>
@@ -106,7 +106,7 @@ export default function ButtonPage() {
 
         {/* Full width */}
         <section id="full-width" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Full Width</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Full Width</h2>
           <ComponentPreview label="fullWidth">
             <div className="w-full max-w-sm">
               <Button fullWidth>전체 너비 버튼</Button>
@@ -116,7 +116,7 @@ export default function ButtonPage() {
 
         {/* Props */}
         <section id="props" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Props</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Props</h2>
           <PropsTable
             props={[
               { name: 'variant', type: "'primary' | 'secondary' | 'outline' | 'ghost' | 'danger'", defaultValue: "'primary'", description: '버튼 스타일 변형' },
@@ -132,9 +132,9 @@ export default function ButtonPage() {
 
         {/* Code */}
         <section id="code" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">코드 예시</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">코드 예시</h2>
           <CodeBlock
-            code={`import { Button } from '@/components/tds'
+            code={`import { Button } from '@/components/fds'
 
 // 기본
 <Button>시작하기</Button>
@@ -159,8 +159,8 @@ export default function ButtonPage() {
 
         {/* Accessibility */}
         <section id="accessibility" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">접근성</h2>
-          <ul className="space-y-3 text-sm text-[var(--tds-color-text-secondary)]">
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">접근성</h2>
+          <ul className="space-y-3 text-sm text-[var(--fds-color-text-secondary)]">
             {[
               'HTML <button> 요소를 기반으로 하여 기본 키보드 인터랙션(Enter, Space)이 자동 지원됩니다.',
               'disabled 상태에서는 자동으로 aria-disabled 처리되어 스크린 리더가 비활성 상태를 안내합니다.',
@@ -168,7 +168,7 @@ export default function ButtonPage() {
               '아이콘만 있는 버튼의 경우 aria-label을 반드시 제공하세요.',
             ].map((item, i) => (
               <li key={i} className="flex gap-3">
-                <span className="text-[var(--tds-color-success)] shrink-0 mt-0.5">✓</span>
+                <span className="text-[var(--fds-color-success)] shrink-0 mt-0.5">✓</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -177,7 +177,7 @@ export default function ButtonPage() {
 
         {/* Do/Dont */}
         <section id="dos-donts" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Do / Don't</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Do / Don't</h2>
           <DosDonts
             dos={[
               {

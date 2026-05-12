@@ -6,9 +6,9 @@ export interface SkeletonProps {
 }
 
 const roundedMap = {
-  sm: 'rounded-[var(--tds-radius-sm)]',
-  md: 'rounded-[var(--tds-radius-md)]',
-  lg: 'rounded-[var(--tds-radius-lg)]',
+  sm: 'rounded-[var(--fds-radius-sm)]',
+  md: 'rounded-[var(--fds-radius-md)]',
+  lg: 'rounded-[var(--fds-radius-lg)]',
   full: 'rounded-full',
 }
 
@@ -17,7 +17,7 @@ export function Skeleton({ className, rounded = 'md' }: SkeletonProps) {
     <div
       aria-hidden="true"
       className={cn(
-        'animate-pulse bg-[var(--tds-color-gray-200)] dark:bg-[var(--tds-color-border)]',
+        'animate-pulse bg-[var(--fds-color-gray-200)] dark:bg-[var(--fds-color-border)]',
         roundedMap[rounded],
         className
       )}
@@ -41,7 +41,7 @@ export function SkeletonText({ lines = 3, className }: { lines?: number; classNa
 
 export function SkeletonCard() {
   return (
-    <div className="p-4 rounded-[var(--tds-radius-xl)] border border-[var(--tds-color-border)] space-y-3">
+    <div className="p-4 rounded-[var(--fds-radius-xl)] border border-[var(--fds-color-border)] space-y-3">
       <div className="flex items-center gap-3">
         <Skeleton className="w-10 h-10" rounded="full" />
         <div className="flex-1 space-y-2">

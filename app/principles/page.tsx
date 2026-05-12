@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { TableOfContents } from '@/components/layout/TableOfContents'
 import { DosDonts } from '@/components/docs/DosDonts'
-import { Button } from '@/components/tds/Button'
+import { Button } from '@/components/fds/Button'
 
 export const metadata: Metadata = { title: '디자인 원칙' }
 
@@ -9,15 +9,15 @@ export default function PrinciplesPage() {
   return (
     <div className="flex gap-8">
       <article className="flex-1 max-w-3xl px-8 py-10">
-        <div className="mb-2 text-sm text-[var(--tds-color-text-tertiary)] font-medium">원칙</div>
-        <h1 className="text-4xl font-bold text-[var(--tds-color-text-primary)] mb-3">디자인 원칙</h1>
-        <p className="text-lg text-[var(--tds-color-text-secondary)] mb-10 leading-relaxed">
+        <div className="mb-2 text-sm text-[var(--fds-color-text-tertiary)] font-medium">원칙</div>
+        <h1 className="text-4xl font-bold text-[var(--fds-color-text-primary)] mb-3">디자인 원칙</h1>
+        <p className="text-lg text-[var(--fds-color-text-secondary)] mb-10 leading-relaxed">
           토스의 디자인 철학과 개발자가 UI를 구성할 때 따라야 할 핵심 원칙을 정리합니다.
         </p>
 
         {/* Core Principles */}
         <section id="core-values">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-6">핵심 가치</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-6">핵심 가치</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
             {[
               {
@@ -43,11 +43,11 @@ export default function PrinciplesPage() {
             ].map((p) => (
               <div
                 key={p.title}
-                className="p-5 rounded-[var(--tds-radius-xl)] border border-[var(--tds-color-border)] bg-[var(--tds-color-bg-base)]"
+                className="p-5 rounded-[var(--fds-radius-xl)] border border-[var(--fds-color-border)] bg-[var(--fds-color-bg-base)]"
               >
                 <div className="text-2xl mb-2">{p.emoji}</div>
-                <h3 className="text-base font-bold text-[var(--tds-color-text-primary)] mb-1">{p.title}</h3>
-                <p className="text-sm text-[var(--tds-color-text-secondary)] leading-relaxed">{p.desc}</p>
+                <h3 className="text-base font-bold text-[var(--fds-color-text-primary)] mb-1">{p.title}</h3>
+                <p className="text-sm text-[var(--fds-color-text-secondary)] leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
@@ -55,8 +55,8 @@ export default function PrinciplesPage() {
 
         {/* CTA Design */}
         <section id="cta-design">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">CTA 설계 원칙</h2>
-          <p className="text-[var(--tds-color-text-secondary)] mb-6">
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">CTA 설계 원칙</h2>
+          <p className="text-[var(--fds-color-text-secondary)] mb-6">
             화면당 하나의 주요 액션(Primary CTA)을 두고, 보조 액션은 Secondary 버튼으로 표현합니다.
           </p>
           <DosDonts
@@ -89,8 +89,8 @@ export default function PrinciplesPage() {
 
         {/* Accessibility */}
         <section id="accessibility" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">접근성 (A11y)</h2>
-          <p className="text-[var(--tds-color-text-secondary)] mb-6">
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">접근성 (A11y)</h2>
+          <p className="text-[var(--fds-color-text-secondary)] mb-6">
             토스는 WCAG 2.1 AA 기준을 모든 컴포넌트에 적용합니다.
           </p>
           <div className="space-y-4">
@@ -121,15 +121,15 @@ export default function PrinciplesPage() {
                 badge: 'WCAG 1.4.1',
               },
             ].map((a) => (
-              <div key={a.title} className="flex gap-4 p-4 rounded-[var(--tds-radius-lg)] border border-[var(--tds-color-border)]">
+              <div key={a.title} className="flex gap-4 p-4 rounded-[var(--fds-radius-lg)] border border-[var(--fds-color-border)]">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-sm font-semibold text-[var(--tds-color-text-primary)]">{a.title}</span>
-                    <span className="text-xs px-1.5 py-0.5 rounded bg-[var(--tds-color-primary-subtle)] text-[var(--tds-color-primary)] font-mono font-medium">
+                    <span className="text-sm font-semibold text-[var(--fds-color-text-primary)]">{a.title}</span>
+                    <span className="text-xs px-1.5 py-0.5 rounded bg-[var(--fds-color-primary-subtle)] text-[var(--fds-color-primary)] font-mono font-medium">
                       {a.badge}
                     </span>
                   </div>
-                  <p className="text-sm text-[var(--tds-color-text-secondary)]">{a.desc}</p>
+                  <p className="text-sm text-[var(--fds-color-text-secondary)]">{a.desc}</p>
                 </div>
               </div>
             ))}
@@ -138,7 +138,7 @@ export default function PrinciplesPage() {
 
         {/* Writing */}
         <section id="writing" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">문구 작성 원칙</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">문구 작성 원칙</h2>
           <DosDonts
             dos={[
               {

@@ -4,22 +4,22 @@ import { TableOfContents } from '@/components/layout/TableOfContents'
 import { PropsTable } from '@/components/docs/PropsTable'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 import { DosDonts } from '@/components/docs/DosDonts'
-import { Textarea } from '@/components/tds/Textarea'
+import { Textarea } from '@/components/fds/Textarea'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 
 export default function TextareaPage() {
   return (
     <div className="flex gap-8">
       <article className="flex-1 max-w-3xl px-8 py-10">
-        <div className="mb-2 text-sm text-[var(--tds-color-text-tertiary)] font-medium">컴포넌트</div>
-        <h1 className="text-4xl font-bold text-[var(--tds-color-text-primary)] mb-3">Textarea</h1>
-        <p className="text-lg text-[var(--tds-color-text-secondary)] mb-10 leading-relaxed">
+        <div className="mb-2 text-sm text-[var(--fds-color-text-tertiary)] font-medium">컴포넌트</div>
+        <h1 className="text-4xl font-bold text-[var(--fds-color-text-primary)] mb-3">Textarea</h1>
+        <p className="text-lg text-[var(--fds-color-text-secondary)] mb-10 leading-relaxed">
           여러 줄의 텍스트를 입력받는 컴포넌트입니다.
           메모, 사유 입력, 피드백 등 긴 텍스트 입력에 사용합니다.
         </p>
 
         <section id="basic">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">기본 사용</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">기본 사용</h2>
           <ComponentPreview label="레이블 + 보조 텍스트">
             <div className="w-full max-w-sm">
               <Textarea
@@ -32,7 +32,7 @@ export default function TextareaPage() {
         </section>
 
         <section id="with-count" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">글자 수 카운터</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">글자 수 카운터</h2>
           <ComponentPreview label="maxLength + showCount">
             <div className="w-full max-w-sm">
               <Textarea
@@ -47,7 +47,7 @@ export default function TextareaPage() {
         </section>
 
         <section id="states" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">States</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">States</h2>
           <ComponentPreview label="에러 상태">
             <div className="w-full max-w-sm">
               <Textarea
@@ -69,7 +69,7 @@ export default function TextareaPage() {
         </section>
 
         <section id="resize" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Resize</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Resize</h2>
           <ComponentPreview label="none / vertical (기본) 비교">
             <div className="w-full max-w-sm space-y-4">
               <Textarea label="크기 조절 불가 (none)" resize="none" placeholder="resize 없음" />
@@ -79,7 +79,7 @@ export default function TextareaPage() {
         </section>
 
         <section id="props" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Props</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Props</h2>
           <PropsTable
             props={[
               { name: 'label', type: 'string', description: '입력 레이블' },
@@ -94,9 +94,9 @@ export default function TextareaPage() {
         </section>
 
         <section id="code" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">코드 예시</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">코드 예시</h2>
           <CodeBlock
-            code={`import { Textarea } from '@/components/tds'
+            code={`import { Textarea } from '@/components/fds'
 import { useState } from 'react'
 
 // 기본
@@ -132,7 +132,7 @@ function MemoInput() {
         </section>
 
         <section id="dos-donts" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Do / Don't</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Do / Don't</h2>
           <DosDonts
             dos={[
               { label: '적절한 초기 높이', description: 'rows prop으로 예상 입력량에 맞는 초기 높이를 설정합니다.' },

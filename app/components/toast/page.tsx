@@ -5,7 +5,7 @@ import { PropsTable } from '@/components/docs/PropsTable'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 import { Playground, type PlaygroundConfig } from '@/components/docs/Playground'
 import { CodeBlock } from '@/components/docs/CodeBlock'
-import { Toast } from '@/components/tds/Toast'
+import { Toast } from '@/components/fds/Toast'
 
 const playgroundConfig: PlaygroundConfig = {
   message: { type: 'string', default: '송금이 완료되었습니다.' },
@@ -17,15 +17,15 @@ export default function ToastPage() {
   return (
     <div className="flex gap-8">
       <article className="flex-1 max-w-3xl px-8 py-10">
-        <div className="mb-2 text-sm text-[var(--tds-color-text-tertiary)] font-medium">컴포넌트</div>
-        <h1 className="text-4xl font-bold text-[var(--tds-color-text-primary)] mb-3">Toast</h1>
-        <p className="text-lg text-[var(--tds-color-text-secondary)] mb-10 leading-relaxed">
+        <div className="mb-2 text-sm text-[var(--fds-color-text-tertiary)] font-medium">컴포넌트</div>
+        <h1 className="text-4xl font-bold text-[var(--fds-color-text-primary)] mb-3">Toast</h1>
+        <p className="text-lg text-[var(--fds-color-text-secondary)] mb-10 leading-relaxed">
           사용자 액션의 결과나 시스템 알림을 일시적으로 표시하는 컴포넌트입니다.
           화면 하단에서 짧게 나타났다 사라집니다.
         </p>
 
         <section id="playground">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">인터랙티브 데모</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">인터랙티브 데모</h2>
           <Playground
             config={playgroundConfig}
             render={(props) => (
@@ -42,7 +42,7 @@ export default function ToastPage() {
         </section>
 
         <section id="variants" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Variants</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Variants</h2>
           <ComponentPreview>
             <div className="flex flex-col gap-3 w-full max-w-sm">
               <Toast variant="default" message="기본 알림 메시지입니다." />
@@ -54,7 +54,7 @@ export default function ToastPage() {
         </section>
 
         <section id="with-action" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Action 버튼</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Action 버튼</h2>
           <ComponentPreview>
             <Toast
               variant="default"
@@ -65,7 +65,7 @@ export default function ToastPage() {
         </section>
 
         <section id="props" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Props</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Props</h2>
           <PropsTable
             props={[
               { name: 'message', type: 'string', required: true, description: '주요 알림 메시지' },
@@ -78,9 +78,9 @@ export default function ToastPage() {
         </section>
 
         <section id="code" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">코드 예시</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">코드 예시</h2>
           <CodeBlock
-            code={`import { Toast } from '@/components/tds'
+            code={`import { Toast } from '@/components/fds'
 
 // 성공
 <Toast variant="success" message="송금이 완료되었습니다." />
@@ -99,7 +99,7 @@ export default function ToastPage() {
 />
 
 // 토스트 시스템 사용 (토스트 매니저 패턴)
-import { toast } from '@/components/tds'
+import { toast } from '@/components/fds'
 
 toast.success('변경사항이 저장되었습니다.')
 toast.error('저장에 실패했습니다.')`}

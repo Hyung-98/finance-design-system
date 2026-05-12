@@ -56,7 +56,7 @@ export function TableOfContents() {
 
   return (
     <aside className="fixed right-6 top-[calc(var(--header-height)+2rem)] w-[var(--toc-width)] hidden xl:block">
-      <p className="text-xs font-semibold text-[var(--tds-color-text-tertiary)] uppercase tracking-wider mb-3">
+      <p className="text-xs font-semibold text-[var(--fds-color-text-tertiary)] uppercase tracking-wider mb-3">
         이 페이지에서
       </p>
       <nav className="space-y-1">
@@ -68,8 +68,8 @@ export function TableOfContents() {
               'block text-sm py-0.5 transition-colors',
               item.level === 3 ? 'pl-4' : '',
               active === item.id
-                ? 'text-[var(--tds-color-primary)] font-medium'
-                : 'text-[var(--tds-color-text-secondary)] hover:text-[var(--tds-color-text-primary)]'
+                ? 'text-[var(--fds-color-primary)] font-medium'
+                : 'text-[var(--fds-color-text-secondary)] hover:text-[var(--fds-color-text-primary)]'
             )}
           >
             {item.text}

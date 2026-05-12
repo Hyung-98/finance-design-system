@@ -4,7 +4,7 @@ import { TableOfContents } from '@/components/layout/TableOfContents'
 import { PropsTable } from '@/components/docs/PropsTable'
 import { ComponentPreview } from '@/components/docs/ComponentPreview'
 import { DosDonts } from '@/components/docs/DosDonts'
-import { Accordion } from '@/components/tds/Accordion'
+import { Accordion } from '@/components/fds/Accordion'
 import { CodeBlock } from '@/components/docs/CodeBlock'
 
 const faqItems = [
@@ -53,16 +53,16 @@ export default function AccordionPage() {
   return (
     <div className="flex gap-8">
       <article className="flex-1 max-w-3xl px-8 py-10">
-        <div className="mb-2 text-sm text-[var(--tds-color-text-tertiary)] font-medium">컴포넌트</div>
-        <h1 className="text-4xl font-bold text-[var(--tds-color-text-primary)] mb-3">Accordion</h1>
-        <p className="text-lg text-[var(--tds-color-text-secondary)] mb-10 leading-relaxed">
+        <div className="mb-2 text-sm text-[var(--fds-color-text-tertiary)] font-medium">컴포넌트</div>
+        <h1 className="text-4xl font-bold text-[var(--fds-color-text-primary)] mb-3">Accordion</h1>
+        <p className="text-lg text-[var(--fds-color-text-secondary)] mb-10 leading-relaxed">
           콘텐츠를 접고 펼칠 수 있는 컴포넌트입니다.
           FAQ, 약관 상세, 설정 옵션 등에 사용합니다.
         </p>
 
         <section id="single">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Single (기본)</h2>
-          <p className="text-sm text-[var(--tds-color-text-secondary)] mb-4">
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Single (기본)</h2>
+          <p className="text-sm text-[var(--fds-color-text-secondary)] mb-4">
             한 번에 하나의 항목만 열립니다. 다른 항목을 열면 기존 항목이 닫힙니다.
           </p>
           <ComponentPreview label="FAQ 예시">
@@ -73,8 +73,8 @@ export default function AccordionPage() {
         </section>
 
         <section id="multiple" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Multiple</h2>
-          <p className="text-sm text-[var(--tds-color-text-secondary)] mb-4">
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Multiple</h2>
+          <p className="text-sm text-[var(--fds-color-text-secondary)] mb-4">
             여러 항목을 동시에 열 수 있습니다. 약관 동의 등에 적합합니다.
           </p>
           <ComponentPreview label="약관 동의 예시">
@@ -85,7 +85,7 @@ export default function AccordionPage() {
         </section>
 
         <section id="props" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Props</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Props</h2>
           <PropsTable
             props={[
               { name: 'items', type: 'AccordionItem[]', required: true, description: '{ value, trigger, content, disabled? }' },
@@ -97,9 +97,9 @@ export default function AccordionPage() {
         </section>
 
         <section id="code" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">코드 예시</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">코드 예시</h2>
           <CodeBlock
-            code={`import { Accordion } from '@/components/tds'
+            code={`import { Accordion } from '@/components/fds'
 
 // FAQ — 단일 오픈
 <Accordion
@@ -129,7 +129,7 @@ export default function AccordionPage() {
         </section>
 
         <section id="dos-donts" className="mt-10">
-          <h2 className="text-2xl font-bold text-[var(--tds-color-text-primary)] mb-4">Do / Don't</h2>
+          <h2 className="text-2xl font-bold text-[var(--fds-color-text-primary)] mb-4">Do / Don't</h2>
           <DosDonts
             dos={[
               { label: 'FAQ와 약관에 적합', description: '내용이 많지만 항상 모두 볼 필요는 없는 콘텐츠에 사용합니다.' },
